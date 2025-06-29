@@ -1,0 +1,194 @@
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ethan Cole – Smart Contract Security</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100;200;300;400;500;600;700;800;900&amp;family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+
+<style>
+body{margin:0;overflow-x:hidden;background:#000;font-family:'Inter',sans-serif}
+canvas{display:block;position:fixed;top:0;left:0;z-index:0}
+/* glass & accents */
+.glass-card{background:rgba(255,255,255,.05);backdrop-filter:blur(20px);position:relative;overflow:hidden}
+.glass-card::before{content:'';position:absolute;inset:0;padding:1px;background:linear-gradient(135deg,rgba(99,102,241,.3),rgba(139,92,246,.3),rgba(59,130,246,.3));border-radius:inherit;mask:linear-gradient(#fff 0 0)content-box,linear-gradient(#fff 0 0);mask-composite:subtract;-webkit-mask-composite:xor}
+.glass-button{background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);transition:all .3s ease;opacity:.75}
+.glass-button:hover{background:rgba(255,255,255,.2);transform:translateY(-2px)}
+.gradient-text{background:linear-gradient(135deg,#22d3ee 0%,#6366f1 50%,#a855f7 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.primary-button{background:rgba(255,255,255,.15);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.3);transition:all .3s ease}
+.primary-button:hover{background:rgba(255,255,255,.25);transform:translateY(-2px);box-shadow:0 20px 40px rgba(0,0,0,.4)}
+.divider{height:1px;background:linear-gradient(to right,transparent,rgba(255,255,255,.1),transparent)}
+.skill-badge{background:rgba(255,255,255,.08);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.15)}
+.float-animation{animation:float 6s ease-in-out infinite}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.fade-in{animation:fade 1s forwards}@keyframes fade{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+
+<body class="font-inter text-white">
+<!-- Aurora Background -->
+<script>
+const scene=new THREE.Scene(),camera=new THREE.OrthographicCamera(-1,1,1,-1,0,1),renderer=new THREE.WebGLRenderer();
+renderer.setSize(innerWidth,innerHeight);document.body.appendChild(renderer.domElement);
+const material=new THREE.ShaderMaterial({uniforms:{iTime:{value:0},iResolution:{value:new THREE.Vector2(innerWidth,innerHeight)}},vertexShader:`void main(){gl_Position=vec4(position,1.0);}`,fragmentShader:`uniform float iTime;uniform vec2 iResolution;#define NUM_OCTAVES 3
+float rand(vec2 n){return fract(sin(dot(n,vec2(12.9898,4.1414)))*43758.5453);}
+float noise(vec2 p){vec2 ip=floor(p);vec2 u=fract(p);u=u*u*(3.-2.*u);float res=mix(mix(rand(ip),rand(ip+vec2(1.,0.)),u.x),mix(rand(ip+vec2(0.,1.)),rand(ip+vec2(1.,1.)),u.x),u.y);return res*res;}
+float fbm(vec2 x){float v=0.;float a=.3;vec2 shift=vec2(100.);mat2 rot=mat2(cos(.5),sin(.5),-sin(.5),cos(.5));for(int i=0;i<NUM_OCTAVES;++i){v+=a*noise(x);x=rot*x*2.+shift;a*=.4;}return v;}
+void main(){vec2 shake=vec2(sin(iTime*1.2)*.005,cos(iTime*2.1)*.005);vec2 p=((gl_FragCoord.xy+shake*iResolution.xy)-iResolution.xy*.5)/iResolution.y*mat2(6.,-4.,4.,6.);vec2 v;vec4 o=vec4(0.);float f=2.+fbm(p+vec2(iTime*5.,0.))*.5;for(float i=0.;i++<35.;){v=p+cos(i*i+(iTime+p.x*.08)*.025+i*vec2(13.,11.))*3.5+vec2(sin(iTime*3.+i)*.003,cos(iTime*3.5-i)*.003);float tail=fbm(v+vec2(iTime*.5,i))*.3*(1.-(i/35.));vec4 col=vec4(.1+.3*sin(i*.2+iTime*.4),.3+.5*cos(i*.3+iTime*.5),.7+.3*sin(i*.4+iTime*.3),1.);vec4 contrib=col*exp(sin(i*i+iTime*.8))/length(max(v,vec2(v.x*f*.015,v.y*1.5)));float thin=smoothstep(0.,1.,i/35.)*.6;o+=contrib*(1.+tail*.8)*thin;}o=tanh(pow(o/100.,vec4(1.6)));gl_FragColor=o*1.5;}`}
+)`,geometry=new THREE.PlaneGeometry(2,2),mesh=new THREE.Mesh(geometry,material);scene.add(mesh);
+function animate(){requestAnimationFrame(animate);material.uniforms.iTime.value+=.016;renderer.render(scene,camera)}
+addEventListener('resize',()=>{renderer.setSize(innerWidth,innerHeight);material.uniforms.iResolution.value.set(innerWidth,innerHeight)});
+animate();
+</script>
+
+<!-- NAV -->
+<nav class="relative z-10 w-full px-6 py-4 fade-in">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <div class="flex items-center space-x-2">
+      <div class="w-8 h-8 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
+        <span class="geist-font text-sm font-bold">EC</span>
+      </div>
+      <span class="geist-font text-lg font-medium">Ethan Cole</span>
+    </div>
+    <div class="hidden md:flex items-center space-x-8">
+      <a href="#about" class="text-gray-300 hover:text-white transition-colors text-sm">About</a>
+      <a href="#audits" class="text-gray-300 hover:text-white transition-colors text-sm">Audits</a>
+      <a href="#blog" class="text-gray-300 hover:text-white transition-colors text-sm">Blog</a>
+      <a href="#contact" class="text-gray-300 hover:text-white transition-colors text-sm">Contact</a>
+    </div>
+    <button class="glass-button px-4 py-2 rounded-lg text-sm">Resume</button>
+  </div>
+</nav>
+<div class="relative z-10 divider"></div>
+
+<!-- HERO -->
+<section id="about" class="relative z-10 w-full min-h-screen flex flex-col items-center justify-center px-6 py-20">
+  <div class="max-w-5xl mx-auto text-center space-y-12 float-animation">
+    <header>
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-light geist-font tracking-tight leading-[1.12]">
+        Smart Contract Security&nbsp;<span class="gradient-text block tracking-tight">Researcher &amp; Full-Stack Dev</span>
+      </h1>
+    </header>
+    <p class="max-w-3xl mx-auto text-lg md:text-xl leading-relaxed text-gray-300">
+      I audit, hack, and build decentralized applications.<br class="hidden md:block">
+      Passionate about safeguarding Web3 ecosystems, delivering end-to-end products, and pushing the boundaries of blockchain tech.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <button class="primary-button px-6 py-3 rounded-lg text-sm min-w-40">Explore My Research</button>
+      <button class="glass-button px-6 py-3 rounded-lg text-sm min-w-40">Hire Me</button>
+    </div>
+  </div>
+
+  <div class="divider mt-24 mb-16"></div>
+
+  <!-- STATS -->
+  <div class="flex flex-col sm:flex-row justify-center items-center gap-8 text-center fade-in">
+    <div>
+      <div class="text-3xl md:text-4xl font-light geist-font tracking-tight mb-1">100+</div>
+      <div class="text-gray-400 text-sm">Contracts Audited</div>
+    </div>
+    <div class="hidden sm:block w-px h-12 bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
+    <div>
+      <div class="text-3xl md:text-4xl font-light geist-font tracking-tight mb-1">70</div>
+      <div class="text-gray-400 text-sm">Critical Bugs Found</div>
+    </div>
+    <div class="hidden sm:block w-px h-12 bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
+    <div>
+      <div class="text-3xl md:text-4xl font-light geist-font tracking-tight mb-1">6+</div>
+      <div class="text-gray-400 text-sm">Years Experience</div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDITS / PROJECTS -->
+<section id="audits" class="relative z-10 px-6 py-16">
+  <h2 class="text-3xl md:text-4xl font-light geist-font tracking-tight mb-10 text-center fade-in">Featured Audits &amp; Builds</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    <!-- Card 1 -->
+    <article class="glass-card rounded-2xl p-6 fade-in">
+      <div class="rounded-xl h-32 mb-4 flex items-center justify-center project-image">
+        <img src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="" class="object-cover w-full h-full rounded-xl opacity-80">
+      </div>
+      <h3 class="text-lg font-medium geist-font mb-2">DeFi Protocol Audit</h3>
+      <p class="text-sm text-gray-300 mb-4">Uncovered re-entrancy &amp; slippage exploits, strengthening TVL protection for a top-10 DeFi platform.</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="skill-badge px-2 py-1 rounded text-xs">Solidity</span>
+        <span class="skill-badge px-2 py-1 rounded text-xs">Foundry</span>
+        <span class="skill-badge px-2 py-1 rounded text-xs">Hardhat</span>
+      </div>
+    </article>
+    <!-- Card 2 -->
+    <article class="glass-card rounded-2xl p-6 fade-in">
+      <div class="rounded-xl h-32 mb-4 flex items-center justify-center project-image">
+        <img src="https://images.unsplash.com/photo-1621619856624-42fd193a0661?w=1080&amp;q=80" alt="" class="object-cover w-full h-full rounded-xl opacity-80">
+      </div>
+      <h3 class="text-lg font-medium geist-font mb-2">NFT Marketplace Audit</h3>
+      <p class="text-sm text-gray-300 mb-4">Secured an ERC-721 marketplace, resolving signature replay &amp; royalties bypass issues before mainnet launch.</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="skill-badge px-2 py-1 rounded text-xs">ERC-721</span>
+        <span class="skill-badge px-2 py-1 rounded text-xs">Ethers.js</span>
+      </div>
+    </article>
+    <!-- Card 3 -->
+    <article class="glass-card rounded-2xl p-6 fade-in">
+      <div class="rounded-xl h-32 mb-4 flex items-center justify-center project-image">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="" class="object-cover w-full h-full rounded-xl opacity-80">
+      </div>
+      <h3 class="text-lg font-medium geist-font mb-2">Full-Stack DApp</h3>
+      <p class="text-sm text-gray-300 mb-4">Built a staking platform with React, Next.js, and Solidity; integrated audits into the CI pipeline.</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="skill-badge px-2 py-1 rounded text-xs">Next.js</span>
+        <span class="skill-badge px-2 py-1 rounded text-xs">Solidity</span>
+        <span class="skill-badge px-2 py-1 rounded text-xs">GraphQL</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- BLOG CTA -->
+<section id="blog" class="relative z-10 px-6 py-16">
+  <div class="glass-card max-w-5xl mx-auto rounded-2xl p-10 flex flex-col md:flex-row items-center gap-10 fade-in">
+    <div class="flex-1">
+      <h2 class="text-2xl md:text-3xl font-light geist-font tracking-tight mb-4">Latest Research Drop</h2>
+      <p class="text-gray-300 text-sm leading-relaxed mb-6">
+        Dive into my deep-dive write-ups on gas optimizations, EVM cheat codes, and advanced <span class="gradient-text">exploit techniques</span>.
+      </p>
+      <a href="#" class="primary-button px-6 py-3 rounded-lg text-sm inline-flex items-center gap-2 group">
+        Read the Blog<i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+      </a>
+    </div>
+    <div class="flex-shrink-0 w-full md:w-56 h-40 rounded-xl overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="" class="object-cover w-full h-full">
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="relative z-10 px-6 py-24">
+  <div class="text-center max-w-2xl mx-auto space-y-8 fade-in">
+    <h2 class="text-3xl md:text-4xl font-light geist-font tracking-tight">Let’s Secure Your Protocol</h2>
+    <p class="text-gray-300 leading-relaxed">
+      Ready for an audit or looking for a collaborative build? Drop me a line and let’s make your smart contracts bulletproof.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <a href="mailto:hello@ethan.codes" class="primary-button px-6 py-3 rounded-lg text-sm">hello@ethan.codes</a>
+      <a href="#" class="glass-button px-6 py-3 rounded-lg text-sm inline-flex items-center gap-2 group">
+        Schedule a Call<i data-lucide="calendar" class="w-4 h-4"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="relative z-10 text-center py-10 text-gray-500 text-xs">
+  © 2024 Ethan Cole – All rights reserved.
+</footer>
+
+<!-- Lucide Init -->
+<script>lucide.createIcons();</script>
+
+</body></html>
