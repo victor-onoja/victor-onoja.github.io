@@ -13,17 +13,7 @@
   />
 
   <style>
-    :root {
-      --width: 100px;
-      --height: 100px;
-      --quantity: 10
-    }
-
     .slider {
-      width: 100%;
-      /* border: 1px solid red; */
-      height: var(--height);
-      overflow: hidden;
       mask-image: linear-gradient(
         to right,
         transparent,
@@ -189,21 +179,6 @@
 </head>
 
 <body class="text-white">
-  <!-- Aurora Background -->
-  <!-- <script>
-    const scene = new THREE.Scene(), camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1), renderer = new THREE.WebGLRenderer();
-    renderer.setSize(innerWidth, innerHeight); document.body.appendChild(renderer.domElement);
-    const material = new THREE.ShaderMaterial({
-      uniforms: { iTime: { value: 0 }, iResolution: { value: new THREE.Vector2(innerWidth, innerHeight) } }, vertexShader: `void main(){gl_Position=vec4(position,1.0);}`, fragmentShader: `uniform float iTime;uniform vec2 iResolution;#define NUM_OCTAVES 3
-float rand(vec2 n){return fract(sin(dot(n,vec2(12.9898,4.1414)))*43758.5453);}
-float noise(vec2 p){vec2 ip=floor(p);vec2 u=fract(p);u=u*u*(3.-2.*u);float res=mix(mix(rand(ip),rand(ip+vec2(1.,0.)),u.x),mix(rand(ip+vec2(0.,1.)),rand(ip+vec2(1.,1.)),u.x),u.y);return res*res;}
-float fbm(vec2 x){float v=0.;float a=.3;vec2 shift=vec2(100.);mat2 rot=mat2(cos(.5),sin(.5),-sin(.5),cos(.5));for(int i=0;i<NUM_OCTAVES;++i){v+=a*noise(x);x=rot*x*2.+shift;a*=.4;}return v;}
-void main(){vec2 shake=vec2(sin(iTime*1.2)*.005,cos(iTime*2.1)*.005);vec2 p=((gl_FragCoord.xy+shake*iResolution.xy)-iResolution.xy*.5)/iResolution.y*mat2(6.,-4.,4.,6.);vec2 v;vec4 o=vec4(0.);float f=2.+fbm(p+vec2(iTime*5.,0.))*.5;for(float i=0.;i++<35.;){v=p+cos(i*i+(iTime+p.x*.08)*.025+i*vec2(13.,11.))*3.5+vec2(sin(iTime*3.+i)*.003,cos(iTime*3.5-i)*.003);float tail=fbm(v+vec2(iTime*.5,i))*.3*(1.-(i/35.));vec4 col=vec4(.1+.3*sin(i*.2+iTime*.4),.3+.5*cos(i*.3+iTime*.5),.7+.3*sin(i*.4+iTime*.3),1.);vec4 contrib=col*exp(sin(i*i+iTime*.8))/length(max(v,vec2(v.x*f*.015,v.y*1.5)));float thin=smoothstep(0.,1.,i/35.)*.6;o+=contrib*(1.+tail*.8)*thin;}o=tanh(pow(o/100.,vec4(1.6)));gl_FragColor=o*1.5;}`}
-    ),geometry=new THREE.PlaneGeometry(2,2),mesh=new THREE.Mesh(geometry,material);scene.add(mesh);
-function animate(){requestAnimationFrame(animate);material.uniforms.iTime.value+=.016;renderer.render(scene,camera)}
-addEventListener('resize',()=>{renderer.setSize(innerWidth,innerHeight);material.uniforms.iResolution.value.set(innerWidth,innerHeight)});
-animate();
-  </script> -->
 
   <!-- NAV -->
   <nav class="relative z-10 w-full px-6 py-4 fade-in">
@@ -268,18 +243,18 @@ animate();
     </div>
   </section>
 
-  <div class="slider">
+  <div class="slider w-full h-[100px] overflow-hidden slider-mask" style="--quantity: 10; --height: 100px">
     <div class="list">
-      <div class="item" style="--position: 1"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
-      <div class="item" style="--position: 2"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
-      <div class="item" style="--position: 3"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
-      <div class="item" style="--position: 4"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
-      <div class="item" style="--position: 5"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
-      <div class="item" style="--position: 6"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
-      <div class="item" style="--position: 7"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
-      <div class="item" style="--position: 8"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
-      <div class="item" style="--position: 9"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
-      <div class="item" style="--position: 10"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
+      <div class="item" style="--position: 1; --width: 100px"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
+      <div class="item" style="--position: 2; --width: 100px"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
+      <div class="item" style="--position: 3; --width: 100px"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
+      <div class="item" style="--position: 4; --width: 100px"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
+      <div class="item" style="--position: 5; --width: 100px"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
+      <div class="item" style="--position: 6; --width: 100px"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
+      <div class="item" style="--position: 7; --width: 100px"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
+      <div class="item" style="--position: 8; --width: 100px"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
+      <div class="item" style="--position: 9; --width: 100px"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
+      <div class="item" style="--position: 10; --width: 100px"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
     </div>
   </div>
 
