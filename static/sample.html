@@ -13,6 +13,58 @@
   />
 
   <style>
+    :root {
+      --width: 100px;
+      --height: 100px;
+      --quantity: 10
+    }
+
+    .slider {
+      width: 100%;
+      /* border: 1px solid red; */
+      height: var(--height);
+      overflow: hidden;
+      mask-image: linear-gradient(
+        to right,
+        transparent,
+        #000 10% 90%,
+        transparent
+      );
+    }
+
+    .slider .list {
+      display: flex;
+      width: 100%;
+      min-width: calc(var(--quantity) * var(--width));
+      position: relative;
+    }
+
+    .slider .list .item {
+      width: var(--width);
+      height: var(--height);
+      position: absolute;
+      left: 100%;
+      animation: autorun 10s linear infinite;
+      animation-delay: calc((10s / var(--quantity)) * (var(--position) - 1) - 9s);
+    }
+
+    .slider .list .item img {
+      height: 100%;
+
+    }
+    .slider:hover .item{
+      animation-play-state: paused!important;
+    }
+
+    @keyframes autorun {
+      from {
+        left: 100%;
+      }
+      to {
+        left: calc(var(--width) * -1);
+      }
+    }
+
     body {
       margin: 0;
       overflow-x: hidden;
@@ -138,7 +190,7 @@
 
 <body class="text-white">
   <!-- Aurora Background -->
-  <script>
+  <!-- <script>
     const scene = new THREE.Scene(), camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1), renderer = new THREE.WebGLRenderer();
     renderer.setSize(innerWidth, innerHeight); document.body.appendChild(renderer.domElement);
     const material = new THREE.ShaderMaterial({
@@ -151,7 +203,7 @@ void main(){vec2 shake=vec2(sin(iTime*1.2)*.005,cos(iTime*2.1)*.005);vec2 p=((gl
 function animate(){requestAnimationFrame(animate);material.uniforms.iTime.value+=.016;renderer.render(scene,camera)}
 addEventListener('resize',()=>{renderer.setSize(innerWidth,innerHeight);material.uniforms.iResolution.value.set(innerWidth,innerHeight)});
 animate();
-  </script>
+  </script> -->
 
   <!-- NAV -->
   <nav class="relative z-10 w-full px-6 py-4 fade-in">
@@ -164,7 +216,8 @@ animate();
         <a href="#audits" class="text-gray-300 hover:text-white transition-colors text-sm">Experience</a>
         <a href="#contact" class="text-gray-300 hover:text-white transition-colors text-sm">Contact</a>
       </div>
-      <button class="glass-button px-4 py-2 rounded-lg text-sm">Resume</button>
+      <!-- <button class="glass-button px-4 py-2 rounded-lg text-sm">Resume</button> -->
+      <calender-blank-icon-fill class="w-6 h-6 fill-current"></calender-blank-icon-fill>
     </div>
   </nav>
   <div class="relative z-10 divider"></div>
@@ -186,8 +239,11 @@ animate();
         and pushing the boundaries of blockchain tech.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <button class="primary-button px-6 py-3 rounded-lg text-sm min-w-40">Explore My Research</button>
-        <button class="glass-button px-6 py-3 rounded-lg text-sm min-w-40">Hire Me</button>
+        <a class="primary-button px-6 py-3 rounded-lg text-sm min-w-40 inline-flex items-center justify-center gap-4">
+          <calender-blank-icon-fill class="w-4 h-4 fill-current"></calender-blank-icon-fill>
+          Github
+        </a>
+        <a class="glass-button px-6 py-3 rounded-lg text-sm min-w-40" href="./assets/resume.pdf" target="_blank">Resume</a>
       </div>
     </div>
 
@@ -212,6 +268,22 @@ animate();
     </div>
   </section>
 
+  <div class="slider">
+    <div class="list">
+      <div class="item" style="--position: 1"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
+      <div class="item" style="--position: 2"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
+      <div class="item" style="--position: 3"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
+      <div class="item" style="--position: 4"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
+      <div class="item" style="--position: 5"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
+      <div class="item" style="--position: 6"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
+      <div class="item" style="--position: 7"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
+      <div class="item" style="--position: 8"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
+      <div class="item" style="--position: 9"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
+      <div class="item" style="--position: 10"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt=""></div>
+    </div>
+  </div>
+
+
   <!-- BLOG CTA -->
   <section id="blog" class="relative z-10 px-6 py-16">
     <div class="glass-card max-w-5xl mx-auto rounded-2xl p-10 flex flex-col md:flex-row items-center gap-10 fade-in">
@@ -225,9 +297,9 @@ animate();
           Read the Blog<i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
         </a>
       </div>
-      <div class="flex-shrink-0 w-full md:w-56 h-40 rounded-xl overflow-hidden">
+      <div class="flex-shrink-0 w-full h-full md:w-56 rounded-xl overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
+          src="./assets/TOP_5141-1.jpg"
           alt="" class="object-cover w-full h-full">
       </div>
     </div>
@@ -275,6 +347,50 @@ animate();
           <img
             src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
             alt="" class="object-cover w-full h-full rounded-xl opacity-80">
+        </div>
+        <h3 class="text-lg font-medium geist-font mb-2">Full-Stack DApp</h3>
+        <p class="text-sm text-gray-300 mb-4">Built a staking platform with React, Next.js, and Solidity; integrated
+          audits into the CI pipeline.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-badge px-2 py-1 rounded text-xs">Next.js</span>
+          <span class="skill-badge px-2 py-1 rounded text-xs">Solidity</span>
+          <span class="skill-badge px-2 py-1 rounded text-xs">GraphQL</span>
+        </div>
+      </article>
+    </div>
+  </section>
+  
+  <section id="audits" class="relative z-10 px-6 py-16">
+    <h2 class="text-3xl md:text-4xl font-light geist-font tracking-tight mb-10 text-center fade-in">Audits</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <!-- Card 1 -->
+      <article class="glass-card rounded-2xl p-6 fade-in">
+        <div class="rounded-xl h-32 mb-4 flex items-center justify-center project-image">
+        </div>
+        <h3 class="text-lg font-medium geist-font mb-2">DeFi Protocol Audit</h3>
+        <p class="text-sm text-gray-300 mb-4">Uncovered re-entrancy &amp; slippage exploits, strengthening TVL
+          protection for a top-10 DeFi platform.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-badge px-2 py-1 rounded text-xs">Solidity</span>
+          <span class="skill-badge px-2 py-1 rounded text-xs">Foundry</span>
+          <span class="skill-badge px-2 py-1 rounded text-xs">Hardhat</span>
+        </div>
+      </article>
+      <!-- Card 2 -->
+      <article class="glass-card rounded-2xl p-6 fade-in">
+        <div class="rounded-xl h-32 mb-4 flex items-center justify-center project-image">
+        </div>
+        <h3 class="text-lg font-medium geist-font mb-2">NFT Marketplace Audit</h3>
+        <p class="text-sm text-gray-300 mb-4">Secured an ERC-721 marketplace, resolving signature replay &amp; royalties
+          bypass issues before mainnet launch.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-badge px-2 py-1 rounded text-xs">ERC-721</span>
+          <span class="skill-badge px-2 py-1 rounded text-xs">Ethers.js</span>
+        </div>
+      </article>
+      <!-- Card 3 -->
+      <article class="glass-card rounded-2xl p-6 fade-in">
+        <div class="rounded-xl h-32 mb-4 flex items-center justify-center project-image">
         </div>
         <h3 class="text-lg font-medium geist-font mb-2">Full-Stack DApp</h3>
         <p class="text-sm text-gray-300 mb-4">Built a staking platform with React, Next.js, and Solidity; integrated
