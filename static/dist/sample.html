@@ -5,12 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mfon Stephen Nwa – Full Stack Engineer and Security Researcher</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
-
   <link
+    rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Geist:wght@100;200;300;400;500;600;700;800;900&amp;family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-    rel="stylesheet">
+  />
 
   <style>
     body {
@@ -134,6 +132,8 @@
       z-index: -1
     }
   </style>
+  <script type="module" crossorigin src="/sample.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/sample.css">
 </head>
 
 <body class="text-white">
@@ -161,7 +161,7 @@ animate();
       </div>
       <div class="hidden md:flex items-center space-x-8">
         <a href="#about" class="text-gray-300 hover:text-white transition-colors text-sm">About</a>
-        <a href="#audits" class="text-gray-300 hover:text-white transition-colors text-sm">Audits</a>
+        <a href="#audits" class="text-gray-300 hover:text-white transition-colors text-sm">Experience</a>
         <a href="#contact" class="text-gray-300 hover:text-white transition-colors text-sm">Contact</a>
       </div>
       <button class="glass-button px-4 py-2 rounded-lg text-sm">Resume</button>
@@ -182,9 +182,8 @@ animate();
       </header>
       <p class="max-w-3xl mx-auto text-lg md:text-xl leading-relaxed text-gray-300">
         I audit, hack, and build decentralized applications.<br class="hidden md:block">
-        Passionate about safeguarding Web3 ecosystems,<br class="hidden md:block">
-        delivering end-to-end products, and pushing<br class="hidden md:block">
-        the boundaries of blockchain tech.
+        Passionate about safeguarding Web3 ecosystems<br class="hidden md:block">
+        and pushing the boundaries of blockchain tech.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
         <button class="primary-button px-6 py-3 rounded-lg text-sm min-w-40">Explore My Research</button>
@@ -213,12 +212,32 @@ animate();
     </div>
   </section>
 
+  <!-- BLOG CTA -->
+  <section id="blog" class="relative z-10 px-6 py-16">
+    <div class="glass-card max-w-5xl mx-auto rounded-2xl p-10 flex flex-col md:flex-row items-center gap-10 fade-in">
+      <div class="flex-1">
+        <h2 class="text-2xl md:text-3xl font-light geist-font tracking-tight mb-4">Latest Research Drop</h2>
+        <p class="text-gray-300 text-sm leading-relaxed mb-6">
+          Dive into my deep-dive write-ups on gas optimizations, EVM cheat codes, and advanced <span
+            class="gradient-text">exploit techniques</span>.
+        </p>
+        <a href="#" class="primary-button px-6 py-3 rounded-lg text-sm inline-flex items-center gap-2 group">
+          Read the Blog<i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+        </a>
+      </div>
+      <div class="flex-shrink-0 w-full md:w-56 h-40 rounded-xl overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
+          alt="" class="object-cover w-full h-full">
+      </div>
+    </div>
+  </section>
+
 <!-- add carousel of tech skills -->
 
   <!-- AUDITS / PROJECTS -->
   <section id="audits" class="relative z-10 px-6 py-16">
-    <h2 class="text-3xl md:text-4xl font-light geist-font tracking-tight mb-10 text-center fade-in">Featured Audits
-      &amp; Builds</h2>
+    <h2 class="text-3xl md:text-4xl font-light geist-font tracking-tight mb-10 text-center fade-in">Experience</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
       <!-- Card 1 -->
       <article class="glass-card rounded-2xl p-6 fade-in">
@@ -269,26 +288,6 @@ animate();
     </div>
   </section>
 
-  <!-- BLOG CTA -->
-  <section id="blog" class="relative z-10 px-6 py-16">
-    <div class="glass-card max-w-5xl mx-auto rounded-2xl p-10 flex flex-col md:flex-row items-center gap-10 fade-in">
-      <div class="flex-1">
-        <h2 class="text-2xl md:text-3xl font-light geist-font tracking-tight mb-4">Latest Research Drop</h2>
-        <p class="text-gray-300 text-sm leading-relaxed mb-6">
-          Dive into my deep-dive write-ups on gas optimizations, EVM cheat codes, and advanced <span
-            class="gradient-text">exploit techniques</span>.
-        </p>
-        <a href="#" class="primary-button px-6 py-3 rounded-lg text-sm inline-flex items-center gap-2 group">
-          Read the Blog<i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
-        </a>
-      </div>
-      <div class="flex-shrink-0 w-full md:w-56 h-40 rounded-xl overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
-          alt="" class="object-cover w-full h-full">
-      </div>
-    </div>
-  </section>
 
   <!-- CONTACT -->
   <section id="contact" class="relative z-10 px-6 py-24">
@@ -301,7 +300,8 @@ animate();
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
         <a href="mailto:mfonnwa@gmail.com" class="primary-button px-6 py-3 rounded-lg text-sm">Email</a>
         <a href="#" class="glass-button px-6 py-3 rounded-lg text-sm inline-flex items-center gap-2 group">
-          Contact Me<i data-lucide="calendar" class="w-4 h-4"></i>
+          <!-- Contact Me<i class="w-4 h-4 ph-fill ph-calendar-blank"></i> -->
+          Contact Me<calender-blank-icon-fill class="w-4 h-4 text-inherit"></calender-blank-icon-fill>
         </a>
       </div>
     </div>
@@ -311,9 +311,6 @@ animate();
   <footer class="relative z-10 text-center py-10 text-gray-500 text-xs">
     © 2025 Mfon Stephen Nwa – All rights reserved.
   </footer>
-
-  <!-- Lucide Init -->
-  <script>lucide.createIcons();</script>
 
   <!-- Techy hero canvas script -->
   <script>
