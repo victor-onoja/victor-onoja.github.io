@@ -4,9 +4,9 @@ Full‑Stack Engineer by day, Web3 Security Sleuth by night. I build sleek, scal
 
 # todo
 
-1. proper animations reveal
-2. finish tech skills section
-3. finish about section
-4. finish projects
-5. finish audits
-6. finish footer
+2. finish all icons
+1. proper scroll animations reveal
+3. finish theme switch
+4. finish colors
+5. finish about
+6. finish all the writing
