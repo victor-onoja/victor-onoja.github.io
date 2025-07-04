@@ -61,6 +61,15 @@
       transform: translateY(-2px);
       box-shadow: 0 20px 40px rgba(0, 0, 0, .4)
     }
+    
+    .lift {
+      transition: all .3s ease
+    }
+
+    .lift:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, .4)
+    }
 
     .divider {
       height: 1px;
@@ -178,7 +187,7 @@
         and pushing the boundaries of blockchain tech.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a class="primary-button px-6 py-3 rounded-lg text-sm inline-flex items-center justify-center gap-4">
+        <a class="primary-button px-6 py-3 rounded-lg text-sm inline-flex items-center justify-center gap-4" href="https://github.com/dashingfon">
           <div class="w-5 h-5 fill-white">
             <svg-icon source="github"></svg-icon>
           </div>
@@ -386,22 +395,22 @@
 
         <div class="flex flex-row">
 
-          <a class="w-6 h-6 m-3 z-0 fill-[#5865F2]" href="#">
+          <a class="w-6 h-6 m-3 z-0 fill-[#5865F2] lift" href="#">
             <svg-icon source="discord">
             </svg-icon>
           </a>
 
-          <a class="w-6 h-6 m-3 z-0 fill-amber-50" href="#">
+          <a class="w-6 h-6 m-3 z-0 fill-amber-50 lift" href="https://github.com/dashingfon">
             <svg-icon source="github">
             </svg-icon>
           </a>
 
-          <a class="w-6 h-6 m-3 z-0 fill-amber-50" href="#">
+          <a class="w-6 h-6 m-3 z-0 fill-amber-50 lift" href="https://x.com/mfonnwa">
             <svg-icon source="x">
             </svg-icon>
           </a>
 
-          <a class="w-6 h-6 m-3 z-0" href="#">
+          <a class="w-6 h-6 m-3 z-0 lift" href="https://www.linkedin.com/in/mfon-nwa111/">
             <svg-icon source="linkedin">
             </svg-icon>
           </a>
@@ -409,13 +418,13 @@
         </div>
 
         <div class="flex mt-3 justify-between">
-          <a href="#" class="primary-button px-5 rounded-lg text-sm items-center group flex flex-row gap-2">
+          <a href="https://github.com/dashingfon" class="primary-button px-5 rounded-lg text-sm items-center group flex flex-row gap-2">
             <div class="w-5 h-5">
               <svg-icon source="briefcase"></svg-icon>
             </div>
             Audit Portfolio
           </a>
-          <a href="#" class="primary-button px-5 py-3 rounded-lg text-sm items-center group flex flex-row gap-2">
+          <a href="#" class="primary-button px-5 py-3 rounded-lg text-sm items-center group flex flex-row gap-2" href="./assets/resume.pdf" target="_blank">
             <div class="w-5 h-5">
               <svg-icon source="arrow_up_right"></svg-icon>
             </div>
@@ -434,16 +443,17 @@
     <h2 class="text-3xl md:text-4xl font-light geist-font tracking-tight mb-10 text-center fade-in">Projects</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
       <!-- Card 1 -->
-      <a class="glass-card relative overflow-hidden bg-white/5 rounded-2xl p-6 fade-in" href="#">
+      <a class="transition-all transition-duration-300 hover:translate-y-2 glass-card relative overflow-hidden bg-white/5 rounded-2xl p-6 fade-in" href="https://github.com/dashingfon/dayones">
         <!-- <div class="rounded-xl h-32 mb-4 flex items-center justify-center project-image">
         </div> -->
-        <h3 class="text-lg font-medium geist-font mb-2">DeFi Protocol Audit</h3>
-        <p class="text-sm text-gray-300 mb-4">Uncovered re-entrancy &amp; slippage exploits, strengthening TVL
-          protection for a top-10 DeFi platform.</p>
+        <h3 class="text-lg font-medium geist-font mb-2">Dayones</h3>
+        <p class="text-sm text-gray-300 mb-4">Dayones is a blockchain-powered e-commerce platform designed to make online shopping more secure and reliable for consumers.
+
+        By acting as a tamper-proof middleman, it protects transactions from fraud and manipulation, ensuring a safe and trustworthy environment for both buyers and sellers.</p>
        <div class="flex flex-wrap gap-2">
 
           <div class="w-6 h-6">
-            <svg-icon source="python">
+            <svg-icon source="git">
             </svg-icon>
           </div>
 
@@ -453,74 +463,56 @@
           </div>
 
           <div class="w-6 h-6">
-            <svg-icon source="python">
+            <svg-icon source="javascript">
             </svg-icon>
           </div>
 
           <div class="w-6 h-6">
-            <svg-icon source="python">
+            <svg-icon source="css">
             </svg-icon>
           </div>
 
         </div>
       </a>
       <!-- Card 2 -->
-      <a class="glass-card relative overflow-hidden bg-white/5 rounded-2xl p-6 fade-in" href="#">
+      <a class="transition-all transition-duration-300 hover:translate-y-2 glass-card relative overflow-hidden bg-white/5 rounded-2xl p-6 fade-in" href="https://github.com/dashingfon/Resolver">
         <!-- <div class="rounded-xl h-32 mb-4 flex items-center justify-center project-image">
         </div> -->
-        <h3 class="text-lg font-medium geist-font mb-2">NFT Marketplace Audit</h3>
-        <p class="text-sm text-gray-300 mb-4">Secured an ERC-721 marketplace, resolving signature replay &amp; royalties
-          bypass issues before mainnet launch.</p>
+        <h3 class="text-lg font-medium geist-font mb-2">Resolver</h3>
+        <p class="text-sm text-gray-300 mb-4">Resolver makes use of symbolic execution to determine the constraints on a smart contract and determine the conditions that results in a successful execution.</p>
         <div class="flex flex-wrap gap-2">
 
           <div class="w-6 h-6">
             <svg-icon source="python">
             </svg-icon>
           </div>
-
-          <div class="w-6 h-6">
-            <svg-icon source="python">
-            </svg-icon>
-          </div>
-
-          <div class="w-6 h-6">
-            <svg-icon source="python">
-            </svg-icon>
-          </div>
-
-          <div class="w-6 h-6">
-            <svg-icon source="python">
-            </svg-icon>
-          </div>
-
         </div>
       </a>
       <!-- Card 3 -->
-      <a class="glass-card relative overflow-hidden bg-white/5 rounded-2xl p-6 fade-in" href="#">
+      <a class="transition-all transition-duration-300 hover:translate-y-2 glass-card relative overflow-hidden bg-white/5 rounded-2xl p-6 fade-in" href="https://github.com/dashingfon/CryptoArbitrage">
         <!-- <div class="rounded-xl h-32 mb-4 flex items-center justify-center project-image">
         </div> -->
-        <h3 class="text-lg font-medium geist-font mb-2">Full-Stack DApp</h3>
-        <p class="text-sm text-gray-300 mb-4">Built a staking platform with React, Next.js, and Solidity; integrated
-          audits into the CI pipeline.</p>
-        <div class="flex flex-wrap gap-2">
+        <h3 class="text-lg font-medium geist-font mb-2">Crypto Arbitrage</h3>
+        <p class="text-sm text-gray-300 mb-4">Crypto-Arbitrage is an arbitrage bot that spots the price discrepancies accross EVM compatible decentralized exchanges and trades using smart contracts CryptoArbitrage implements flash loans to maximize the potential profit</p>
+        <div class="flex flex-row gap-3 justify-start items-center">
 
           <div class="w-6 h-6">
             <svg-icon source="python">
             </svg-icon>
           </div>
 
-          <div class="w-6 h-6">
-            <svg-icon source="python">
+          <div class="w-8 h-8 fill-amber-50">
+            <svg-icon source="solidity" class="h-6">
             </svg-icon>
           </div>
 
           <div class="w-6 h-6">
-            <svg-icon source="python">
+            <svg-icon source="cython">
             </svg-icon>
           </div>
 
           <div class="w-6 h-6">
-            <svg-icon source="python">
+            <svg-icon source="html5">
             </svg-icon>
           </div>
 
@@ -533,49 +525,45 @@
     <h2 class="text-3xl md:text-4xl font-light geist-font tracking-tight mb-10 text-center fade-in">Audits</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
       <!-- Card 1 -->
-      <a class="glass-card relative overflow-hidden bg-white/5 rounded-2xl p-6 fade-in" href="#">
+      <a class="transition-all transition-duration-300 hover:translate-y-2 glass-card relative overflow-hidden bg-white/5 rounded-2xl p-6 fade-in" href="https://codehawks.cyfrin.io/c/2023-12-stake-link/results?lt=contest&page=1&sc=reward&sj=reward&t=leaderboard">
         <div class="rounded-xl h-32 mb-4 flex items-center justify-center project-image">
           <img
-            src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
+            src="./assets/icons/stake_link.webp"
             alt="" class="object-cover w-full h-full rounded-xl opacity-80">
         </div>
-        <h3 class="text-lg font-medium geist-font mb-2">DeFi Protocol Audit</h3>
-        <p class="text-sm text-gray-300 mb-4">Uncovered re-entrancy &amp; slippage exploits, strengthening TVL
-          protection for a top-10 DeFi platform.</p>
+        <h3 class="text-lg font-medium geist-font mb-2">Stake.Link</h3>
+        <p class="text-sm text-gray-300 mb-4">A first-of-its-kind liquid delegated staking platform delivering DeFi composability for Chainlink Staking. Built by premier Chainlink ecosystem developer LinkPool, powered by Chainlink node operators, and governed by the stake.link DAO</p>
         <div class="flex flex-wrap gap-2">
-          <span class="skill-badge px-2 py-1 rounded text-xs">Solidity</span>
-          <span class="skill-badge px-2 py-1 rounded text-xs">Foundry</span>
+          <span class="skill-badge px-2 py-1 rounded text-xs">Defi</span>
           <span class="skill-badge px-2 py-1 rounded text-xs">Hardhat</span>
+          <span class="skill-badge px-2 py-1 rounded text-xs">Bridge</span>
         </div>
       </a>
       <!-- Card 2 -->
-      <a class="glass-card relative overflow-hidden bg-white/5 rounded-2xl p-6 fade-in" href="#">
+      <a class="transition-all transition-duration-300 hover:translate-y-2 glass-card relative overflow-hidden bg-white/5 rounded-2xl p-6 fade-in" href="https://codehawks.cyfrin.io/c/2024-07-biconomy">
         <div class="rounded-xl h-32 mb-4 flex items-center justify-center project-image">
           <img src="https://images.unsplash.com/photo-1621619856624-42fd193a0661?w=1080&amp;q=80" alt=""
             class="object-cover w-full h-full rounded-xl opacity-80">
         </div>
-        <h3 class="text-lg font-medium geist-font mb-2">NFT Marketplace Audit</h3>
-        <p class="text-sm text-gray-300 mb-4">Secured an ERC-721 marketplace, resolving signature replay &amp; royalties
-          bypass issues before mainnet launch.</p>
+        <h3 class="text-lg font-medium geist-font mb-2">Biconomy: Nexus</h3>
+        <p class="text-sm text-gray-300 mb-4">The Biconomy offers an Account Abstraction toolkit that enables the simplest UX on your dApp, wallet, or appchain. Built on top of ERC 4337, Biconomy offers a full-stack solution for tapping into the power of our Smart Accounts Platform, Paymasters, and Bundlers</p>
         <div class="flex flex-wrap gap-2">
-          <span class="skill-badge px-2 py-1 rounded text-xs">ERC-721</span>
-          <span class="skill-badge px-2 py-1 rounded text-xs">Ethers.js</span>
+          <span class="skill-badge px-2 py-1 rounded text-xs">Hardhat</span>
+          <span class="skill-badge px-2 py-1 rounded text-xs">Foundry</span>
         </div>
       </a>
       <!-- Card 3 -->
-      <a class="glass-card relative overflow-hidden bg-white/5 rounded-2xl p-6 fade-in" href="#">
+      <a class="transition-all transition-duration-300 hover:translate-y-2 glass-card relative overflow-hidden bg-white/5 rounded-2xl p-6 fade-in" href="https://code4rena.com/audits/2024-12-chainlink-payment-abstraction">
         <div class="rounded-xl h-32 mb-4 flex items-center justify-center project-image">
           <img
             src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
             alt="" class="object-cover w-full h-full rounded-xl opacity-80">
         </div>
-        <h3 class="text-lg font-medium geist-font mb-2">Full-Stack DApp</h3>
-        <p class="text-sm text-gray-300 mb-4">Built a staking platform with React, Next.js, and Solidity; integrated
-          audits into the CI pipeline.</p>
+        <h3 class="text-lg font-medium geist-font mb-2">Chainlink Payment Abstraction</h3>
+        <p class="text-sm text-gray-300 mb-4">Payment Abstraction is a smart contract system that streamlines Chainlink service payments by accepting multiple tokens across chains, consolidating them via CCIP, converting them to LINK using Automation and DEXs, and making LINK available for service providers to withdraw.</p>
         <div class="flex flex-wrap gap-2">
-          <span class="skill-badge px-2 py-1 rounded text-xs">Next.js</span>
-          <span class="skill-badge px-2 py-1 rounded text-xs">Solidity</span>
-          <span class="skill-badge px-2 py-1 rounded text-xs">GraphQL</span>
+          <span class="skill-badge px-2 py-1 rounded text-xs">Foundry</span>
+          <span class="skill-badge px-2 py-1 rounded text-xs">Chainlink</span>
         </div>
       </a>
     </div>
@@ -599,22 +587,22 @@
       </div>
       <div class="flex flex-row gap-3 align-middle justify-center">
         
-        <a class="w-6 h-6 m-4 fill-[#5865F2]" href="#">
+        <a class="w-6 h-6 m-4 fill-[#5865F2] lift" href="#">
           <svg-icon source="discord">
           </svg-icon>
         </a>
 
-        <a class="w-6 h-6 m-4 fill-amber-50" href="#">
+        <a class="w-6 h-6 m-4 fill-amber-50 lift" href="https://github.com/dashingfon">
           <svg-icon source="github">
           </svg-icon>
         </a>
 
-        <a class="w-6 h-6 m-4 fill-amber-50" href="#">
+        <a class="w-6 h-6 m-4 fill-amber-50 lift" href="https://x.com/mfonnwa">
           <svg-icon source="x">
           </svg-icon>
         </a>
 
-        <a class="w-6 h-6 m-4" href="#">
+        <a class="w-6 h-6 m-4 lift" href="https://www.linkedin.com/in/mfon-nwa111/">
           <svg-icon source="linkedin">
           </svg-icon>
         </a>
