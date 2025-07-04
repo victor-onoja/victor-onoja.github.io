@@ -1,5 +1,5 @@
-import python from '../icons/python.svg?raw ';
-import javascript from '../icons/java-script.svg?raw ';
+import python from '../icons/python.svg?raw';
+import javascript from '../icons/java-script.svg?raw';
 import ham_r from "../icons/hamburger-regular.svg?raw";
 import ham_f from "../icons/hamburger-fill.svg?raw";
 import arrow_up_right from "../icons/arrow-up-right.svg?raw";
