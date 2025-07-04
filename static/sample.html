@@ -725,8 +725,10 @@
      function setTheme(theme) {
         if (theme === 'dark') {
           checkbox.checked = false;
+          body.classList.add('dark');
         } else {
           checkbox.checked = true;
+          body.classList.remove('dark');
         }
         localStorage.setItem('theme', theme);
       }
@@ -743,8 +745,10 @@
       checkbox.addEventListener('change', function() {
         if (checkbox.checked) {
           body.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
         } else {
           body.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
         }
       });
 
