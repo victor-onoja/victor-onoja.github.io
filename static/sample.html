@@ -788,14 +788,14 @@
       if(p.y<0||p.y>h)p.vy*=-1;
       ctx.beginPath();
       ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-      ctx.fillStyle='rgb(49,52,237)';
+      ctx.fillStyle='rgb(34,211,238)';
       ctx.fill();
       for(let j=i+1;j<COUNT;j++){
         const q=particles[j];
         const dx=p.x-q.x,dy=p.y-q.y,dist=Math.hypot(dx,dy);
         if(dist<MAX_DIST){
           const alpha=1-(dist/MAX_DIST);
-          ctx.strokeStyle=`rgba(49, 52, 237, ${ alpha * 0.12 })`;
+          ctx.strokeStyle=`rgba(34, 211, 238, ${ alpha * 0.12 })`;
           ctx.beginPath();
           ctx.moveTo(p.x,p.y);
           ctx.lineTo(q.x,q.y);
