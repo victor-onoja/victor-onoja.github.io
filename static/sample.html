@@ -13,6 +13,9 @@
   />
 
   <style>
+    html {
+      scroll-behavior: smooth
+    }
     /* glass & accents */
     .glass-card {
       backdrop-filter: blur(20px);
@@ -189,21 +192,6 @@
     }
     .switch input:checked ~ .slider .cloud {
       opacity: 1;
-    }
-
-    .bg-half-full {
-      background-size: 0% 100%;
-    }
-
-    .scroll-reveal {
-      animation: scroll-reveal linear forwards;
-      animation-timeline: view();
-    }
-
-    @keyframes scroll-reveal {
-      to {
-        background-size: 100% 100%;
-      }
     }
 
   </style>
@@ -472,10 +460,9 @@
       <div class="m-8 h-full flex flex-col">
         <!-- <h2 class="text-2xl md:text-3xl font-light geist-font tracking-tight mb-4">Latest Research Drop</h2> -->
          <div class="">
-           <p class="text-xl text-white/20 bg-clip-text bg-gradient-to-r from-red-500 to-blue-500 leading-relaxed mb-4 bg-half-full bg-no-repeat scroll-reveal">
-             Full‑Stack Engineer by day, Web3 Security Sleuth by night. I build sleek, scalable apps, and I poke holes in blockchain systems before the bad guys do. 
-             <!-- <span class="gradient-text">Full‑Stack Engineer</span>.
-             <span class="gradient-text">Full‑Stack Engineer</span>. -->
+           <p class="text-xl mb-4">
+             <span>Full‑Stack Engineer by day, Web3 Security Sleuth by night. I build sleek, scalable apps, and I poke holes in blockchain systems before the bad guys do.</span>
+             <!-- <span class="gradient-text">Full‑Stack Engineer</span> -->
             </p>
           </div>
 
@@ -510,7 +497,7 @@
             </div>
             Audit Portfolio
           </a>
-          <a href="#" class="primary-button px-5 py-3 rounded-lg text-sm items-center group flex flex-row gap-2" href="./assets/resume.pdf" target="_blank">
+          <a class="primary-button px-5 py-3 rounded-lg text-sm items-center group flex flex-row gap-2" href="./assets/resume.pdf" target="_blank">
             <div class="w-5 h-5">
               <svg-icon source="arrow_up_right"></svg-icon>
             </div>
