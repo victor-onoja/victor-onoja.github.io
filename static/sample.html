@@ -201,10 +201,10 @@
   </style>
 </head>
 
-<body class="text-white m-0 overflow-x-hidden bg-gray-950" style="font-family: 'Geist', sans-serif;">
+<body class="dark:text-white text-gray-950 m-0 overflow-x-hidden dark:bg-gray-950 bg-gray-50" style="font-family: 'Geist', sans-serif;">
 
   <!-- NAV -->
-  <nav class="sticky top-0 z-100 w-full px-6 py-4 fade-in bg-gray-950">
+  <nav class="sticky top-0 z-100 w-full px-6 py-4 fade-in dark:bg-gray-950 bg-gray-100 shadow-sm dark:shadow-gray-900 shadow-gray-100">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
       <div class="flex items-center space-x-2">
         <span class="geist-font text-lg font-medium">Mfon Stephen</span>
@@ -537,7 +537,7 @@
     <h2 class="text-3xl md:text-4xl font-light geist-font tracking-tight mb-10 text-center" data-animate>Projects</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
       <!-- Card 1 -->
-      <a class="transition-all transition-duration-300 hover:translate-y-2   glass-card relative overflow-hidden bg-white/5 rounded-2xl p-6" href="https://github.com/dashingfon/dayones" data-animate>
+      <a class="transition-all transition-duration-300 glass-card relative overflow-hidden bg-white/5 rounded-2xl p-6" href="https://github.com/dashingfon/dayones" data-animate>
         <!-- <div class="rounded-xl h-32 mb-4 flex items-center justify-center project-image">
         </div> -->
         <h3 class="text-lg font-medium geist-font mb-2">Dayones</h3>
@@ -569,7 +569,7 @@
         </div>
       </a>
       <!-- Card 2 -->
-      <a class="transition-all transition-duration-300 hover:translate-y-2 glass-card relative overflow-hidden bg-white/5 rounded-2xl p-6" href="https://github.com/dashingfon/Resolver" data-animate>
+      <a class="transition-all transition-duration-300 glass-card relative overflow-hidden bg-white/5 rounded-2xl p-6" href="https://github.com/dashingfon/Resolver" data-animate>
         <!-- <div class="rounded-xl h-32 mb-4 flex items-center justify-center project-image">
         </div> -->
         <h3 class="text-lg font-medium geist-font mb-2">Resolver</h3>
@@ -583,7 +583,7 @@
         </div>
       </a>
       <!-- Card 3 -->
-      <a class="transition-all transition-duration-300 hover:translate-y-2 glass-card relative overflow-hidden bg-white/5 rounded-2xl p-6" href="https://github.com/dashingfon/CryptoArbitrage" data-animate>
+      <a class="transition-all transition-duration-300 glass-card relative overflow-hidden bg-white/5 rounded-2xl p-6" href="https://github.com/dashingfon/CryptoArbitrage" data-animate>
         <!-- <div class="rounded-xl h-32 mb-4 flex items-center justify-center project-image">
         </div> -->
         <h3 class="text-lg font-medium geist-font mb-2">Crypto Arbitrage</h3>
@@ -619,7 +619,7 @@
     <h2 class="text-3xl md:text-4xl font-light geist-font tracking-tight mb-10 text-center" data-animate>Audits</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
       <!-- Card 1 -->
-      <a class="transition-all transition-duration-300 hover:translate-y-2 glass-card relative overflow-hidden bg-white/5 rounded-2xl p-6" href="https://codehawks.cyfrin.io/c/2023-12-stake-link/results?lt=contest&page=1&sc=reward&sj=reward&t=leaderboard" data-animate>
+      <a class="transition-all transition-duration-300 glass-card relative overflow-hidden bg-white/5 rounded-2xl p-6" href="https://codehawks.cyfrin.io/c/2023-12-stake-link/results?lt=contest&page=1&sc=reward&sj=reward&t=leaderboard" data-animate>
         <div class="rounded-xl h-32 mb-4 flex items-center justify-center project-image">
           <img
             src="./assets/icons/stake_link.webp"
@@ -634,7 +634,7 @@
         </div>
       </a>
       <!-- Card 2 -->
-      <a class="transition-all transition-duration-300 hover:translate-y-2 glass-card relative overflow-hidden bg-white/5 rounded-2xl p-6" href="https://codehawks.cyfrin.io/c/2024-07-biconomy" data-animate>
+      <a class="transition-all transition-duration-300 glass-card relative overflow-hidden bg-white/5 rounded-2xl p-6" href="https://codehawks.cyfrin.io/c/2024-07-biconomy" data-animate>
         <div class="rounded-xl h-32 mb-4 flex items-center justify-center project-image">
           <img src="./assets/icons/biconomy.webp" alt=""
             class="object-cover w-full h-full rounded-xl opacity-80">
@@ -647,7 +647,7 @@
         </div>
       </a>
       <!-- Card 3 -->
-      <a class="transition-all transition-duration-300 hover:translate-y-2 glass-card relative overflow-hidden bg-white/5 rounded-2xl p-6" href="https://code4rena.com/audits/2024-12-chainlink-payment-abstraction" data-animate>
+      <a class="transition-all transition-duration-300 glass-card relative overflow-hidden bg-white/5 rounded-2xl p-6" href="https://code4rena.com/audits/2024-12-chainlink-payment-abstraction" data-animate>
         <div class="rounded-xl h-32 mb-4 flex items-center justify-center project-image">
           <img
             src="./assets/icons/chainlink_image.webp"
@@ -712,16 +712,6 @@
 
   <!-- Techy hero canvas script -->
   <script>
-
-    function getTheme() {
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        return 'dark';
-      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-        return 'light';
-      } else {
-        return 'none';
-      }
-    }
      function setTheme(theme) {
         if (theme === 'dark') {
           checkbox.checked = false;
@@ -798,14 +788,14 @@
       if(p.y<0||p.y>h)p.vy*=-1;
       ctx.beginPath();
       ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-      ctx.fillStyle='rgba(255,255,255,0.6)';
+      ctx.fillStyle='rgb(49,52,237)';
       ctx.fill();
       for(let j=i+1;j<COUNT;j++){
         const q=particles[j];
         const dx=p.x-q.x,dy=p.y-q.y,dist=Math.hypot(dx,dy);
         if(dist<MAX_DIST){
           const alpha=1-(dist/MAX_DIST);
-          ctx.strokeStyle=`rgba(255, 255, 255, ${ alpha * 0.12 })`;
+          ctx.strokeStyle=`rgba(49, 52, 237, ${ alpha * 0.12 })`;
           ctx.beginPath();
           ctx.moveTo(p.x,p.y);
           ctx.lineTo(q.x,q.y);
