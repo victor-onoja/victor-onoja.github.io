@@ -26,6 +26,7 @@ import sqlite from "../icons/SQLite.svg?raw";
 import tailwind from "../icons/tailwindcss.svg?raw";
 import vite_icon from "../icons/Vite-icon.svg?raw";
 import x_icon from "../icons/x.svg?raw";
+import x_mark from "../icons/x-bold.svg?raw";
 
 const icons = {
     "python": python,
@@ -55,7 +56,8 @@ const icons = {
     "sqlite": sqlite,
     "tailwind": tailwind,
     "vite_icon": vite_icon,
-    "x": x_icon
+    "x": x_icon,
+    "close": x_mark
 }
 
 class SVGIcon extends HTMLElement {
