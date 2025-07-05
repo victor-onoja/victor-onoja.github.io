@@ -1,9 +1,11 @@
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mfon Stephen Nwa – Full Stack Engineer and Security Researcher</title>
+
+
 
   <link
     rel="stylesheet"
@@ -11,9 +13,6 @@
   />
 
   <style>
-    html {
-      scroll-behavior: smooth
-    }
     /* glass & accents */
     .glass-card {
       backdrop-filter: blur(20px);
@@ -24,16 +23,16 @@
       position: absolute;
       inset: 0;
       padding: 1px;
-      background: linear-gradient(135deg, rgba(99, 102, 241, .3), rgba(139, 92, 246, .3), rgba(59, 130, 246, .3));
       border-radius: inherit;
+      background: linear-gradient(135deg, rgba(99, 102, 241, .3), rgba(139, 92, 246, .3), rgba(59, 130, 246, .3));
       mask: linear-gradient(#fff 0 0)content-box, linear-gradient(#fff 0 0);
       mask-composite: subtract;
       -webkit-mask-composite: xor
     }
 
     .glass-button {
-      background: rgba(255, 255, 255, .1);
       backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, .1);
       border: 1px solid rgba(255, 255, 255, .2);
       transition: all .3s ease;
       opacity: .75
@@ -49,19 +48,6 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent
     }
-
-    .primary-button {
-      background: rgba(255, 255, 255, .15);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, .3);
-      transition: all .3s ease
-    }
-
-    .primary-button:hover {
-      background: rgba(255, 255, 255, .25);
-      transform: translateY(-2px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, .4)
-    }
     
     .lift {
       transition: all .3s ease
@@ -72,14 +58,9 @@
       box-shadow: 0 20px 40px rgba(0, 0, 0, .4)
     }
 
-    .divider {
-      height: 1px;
-      background: linear-gradient(to right, transparent, rgba(255, 255, 255, .1), transparent)
-    }
-
     .skill-badge {
-      background: rgba(255, 255, 255, .08);
       backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, .08);
       border: 1px solid rgba(255, 255, 255, .15)
     }
 
@@ -245,23 +226,23 @@
     </div>
   </nav>
 
-  <div id="side-menu" class="md:hidden lg:hidden top-0 right-0 z-130 fixed bg-gradient-to-br from-gray-50 dark:from-gray-950 via-[#ECEDFD] dark:via-[#030425] to-gray-50 dark:to-gray-950 w-full h-full transition-transform translate-x-full duration-300 ease-in-out transform">
-      <div class="flex flex-col p-6 h-full">
-        <div class="flex justify-between items-center mb-8">
-          <a href="#" class="font-semibold text-xl tracking-tight">Mfon Stephen</a>
+  <div id="side-menu" class="bg-gray-50 dark:bg-gray-950 md:hidden lg:hidden top-0 right-0 z-130 fixed w-full h-full transition-transform translate-x-full duration-300 ease-in-out transform">
+      <div class="flex flex-col p-6 h-full justify-between">
+        <div class="flex justify-between items-center mb-8 transition-all duration-300 ease-in-out">
+          <a href="#" class="font-semibold text-xl tracking-tigh">Mfon Stephen</a>
           <button onclick="document.getElementById('side-menu').classList.toggle('translate-x-full')" class="w-8 h-8">
             <svg-icon source="close">
             </svg-icon>
           </button>
         </div>
-        <ul class="flex flex-col space-y-3 m-y-6 mt-20 font-medium text-lg">
-          <li><a href="#about" class="block py-2" onclick="document.getElementById('side-menu').classList.add('translate-x-full')">About</a></li>
-          <li><a href="#projects" class="block py-2" onclick="document.getElementById('side-menu').classList.add('translate-x-full')">Experience</a></li>
-          <li><a href="#contact" class="block py-2" onclick="document.getElementById('side-menu').classList.add('translate-x-full')">Contact</a></li>
+        <ul class="flex flex-col mb-40 font-medium text-lg">
+          <li><a href="#about" class="text-3xl flex py-2 h-36 items-center font-bold hover:bg-gray-300 dark:hover:bg-gray-700 justify-center" onclick="document.getElementById('side-menu').classList.add('translate-x-full')">About</a></li>
+          <li><a href="#projects" class="text-3xl flex py-2 h-36 items-center font-bold hover:bg-gray-300 dark:hover:bg-gray-700 justify-center" onclick="document.getElementById('side-menu').classList.add('translate-x-full')">Experience</a></li>
+          <li><a href="#contact" class="text-3xl flex py-2 h-36 items-center font-bold hover:bg-gray-300 dark:hover:bg-gray-700 justify-center" onclick="document.getElementById('side-menu').classList.add('translate-x-full')">Contact</a></li>
         </ul>
       </div>
     </div>
-  <div class="z-10 relative divider"></div>
+  <div class="z-10 relative h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-800 to-transparent"></div>
 
   <!-- HERO -->
   <section id="hero" class="z-10 relative flex flex-col justify-center items-center px-6 py-20 w-full min-h-screen">
@@ -270,24 +251,24 @@
 
     <div class="float-animation space-y-12 mx-auto max-w-5xl text-center">
       <header>
-        <h1 class="font-light text-5xl md:text-6xl lg:text-7xl leading-[1.12] tracking-tight geist-font">
+        <h1 class="font-light text-5xl md:text-6xl lg:text-7xl leading-[1.12] tracking-tight transition-all duration-300 ease-in-out geist-font">
           Full Stack Engineer.<span class="block tracking-tight gradient-text">Web3 Security Researcher.</span>
         </h1>
       </header>
-      <p class="mx-auto max-w-3xl text-lg md:text-xl leading-relaxed">
+      <p class="mx-auto max-w-3xl text-lg md:text-xl leading-relaxed transition-all duration-300 ease-in-out">
         I audit, hack, and build decentralized applications.<br class="hidden md:block">
         Passionate about safeguarding Web3 ecosystems<br class="hidden md:block">
         and pushing the boundaries of blockchain tech.
       </p>
       <div class="flex sm:flex-row flex-col justify-center items-center gap-4">
-        <a class="inline-flex justify-center items-center gap-4 px-6 py-3 rounded-lg text-sm primary-button" href="https://github.com/dashingfon">
+        <a class="inline-flex justify-center items-center gap-4 bg-gray-300 dark:bg-gray-700 hover:bg-gray-200 hover:dark:bg-gray-800 px-6 py-3 border border-gray-600 dark:border-gray-400 border-solid rounded-lg text-sm font-normal backdrop-blur-sm hover:transform hover:-translate-y-1 hover:shadow-md hover:shadow-gray-700 dark:hover:shadow-gray-300" href="https://github.com/dashingfon">
           <div class="fill-gray-950 dark:fill-white w-5 h-5">
             <svg-icon source="github"></svg-icon>
           </div>
           Github
         </a>
-        <a class="inline-flex justify-center items-center gap-4 px-6 py-3 rounded-lg text-sm primary-button" href="./assets/resume.pdf" target="_blank">
-          <div class="w-5 h-5">
+        <a class="inline-flex justify-center items-center gap-4 px-6 py-3 border border-gray-600 dark:border-gray-400 rounded-lg text-sm font-normal backdrop-blur-sm hover:transform hover:-translate-y-1 hover:shadow-md hover:shadow-gray-700 dark:hover:shadow-gray-300" href="./assets/resume.pdf" target="_blank">
+          <div class="w-5 h-5 transition-all duration-300 ease-in-out">
             <svg-icon source="arrow_up_right"></svg-icon>
           </div>
           Resume
@@ -295,7 +276,7 @@
       </div>
     </div>
 
-    <div class="mt-24 mb-16 divider"></div>
+    <div class="mt-24 mb-16 h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-800 to-transparent"></div>
 
     <!-- STATS -->
     <div class="flex sm:flex-row flex-col justify-center items-center gap-8 text-center fade-in">
@@ -317,50 +298,50 @@
   </section>
 
   <section id="projects" class="z-10 relative px-6 md:px-24 lg:px-48 py-16">
-    <div class="mt-16 mb-16 divider"></div>
+    <div class="mt-16 mb-16 h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-800 to-transparent"></div>
     <h2 class="mb-10 font-light text-3xl md:text-4xl text-center tracking-tight geist-font" data-animate>Languages.</h2>
 
 
     <!-- Languages -->
     <!-- Replaced with your content -->
     <div class="flex flex-wrap justify-center gap-4" data-animate>
-      <div class="flex flex-col justify-center items-center bg-neutral-800/70 hover:shadow-[0_5px_15px_rgba(52,211,153,0.15)] p-4 border border-neutral-600 hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
+      <div class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 hover:shadow-[0_5px_15px_rgba(34,211,238,0.3)] p-4 border border-gray-400 dark:border-gray-600  hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
           <div class="mb-2 w-9 h-9">
             <svg-icon source="python"></svg-icon>
           </div>
           <span>Python</span>
       </div>
-      <div class="flex flex-col justify-center items-center bg-neutral-800/70 hover:shadow-[0_5px_15px_rgba(52,211,153,0.15)] p-4 border border-neutral-600 hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
+      <div class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 hover:shadow-[0_5px_15px_rgba(34,211,238,0.3)] p-4 border border-gray-400 dark:border-gray-600  hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
           <div class="mb-2 w-9 h-9">
             <svg-icon source="javascript"></svg-icon>
           </div>
           <span>JavaScript</span>
       </div>
-      <div class="flex flex-col justify-center items-center bg-neutral-800/70 hover:shadow-[0_5px_15px_rgba(52,211,153,0.15)] p-4 border border-neutral-600 hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
+      <div class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 hover:shadow-[0_5px_15px_rgba(34,211,238,0.3)] p-4 border border-gray-400 dark:border-gray-600  hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
           <div class="fill-gray-950 dark:fill-white mb-2 w-9 h-9">
             <svg-icon source="rust"></svg-icon>
           </div>
           <span>Rust</span>
       </div>
-      <div class="flex flex-col justify-center items-center bg-neutral-800/70 hover:shadow-[0_5px_15px_rgba(52,211,153,0.15)] p-4 border border-neutral-600 hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
+      <div class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 hover:shadow-[0_5px_15px_rgba(34,211,238,0.3)] p-4 border border-gray-400 dark:border-gray-600  hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
           <div class="fill-gray-950 dark:fill-white mb-2 w-9 h-9">
             <svg-icon source="solidity"></svg-icon>
           </div>
           <span>Solidity</span>
       </div>
-      <div class="flex flex-col justify-center items-center bg-neutral-800/70 hover:shadow-[0_5px_15px_rgba(52,211,153,0.15)] p-4 border border-neutral-600 hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
+      <div class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 hover:shadow-[0_5px_15px_rgba(34,211,238,0.3)] p-4 border border-gray-400 dark:border-gray-600  hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
           <div class="mb-2 w-9 h-9">
             <svg-icon source="html5"></svg-icon>
           </div>
           <span>HTML</span>
       </div>
-      <div class="flex flex-col justify-center items-center bg-neutral-800/70 hover:shadow-[0_5px_15px_rgba(52,211,153,0.15)] p-4 border border-neutral-600 hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
+      <div class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 hover:shadow-[0_5px_15px_rgba(34,211,238,0.3)] p-4 border border-gray-400 dark:border-gray-600  hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
           <div class="mb-2 w-9 h-9">
             <svg-icon source="css"></svg-icon>
           </div>
           <span>CSS</span>
       </div>
-      <div class="flex flex-col justify-center items-center bg-neutral-800/70 hover:shadow-[0_5px_15px_rgba(52,211,153,0.15)] p-4 border border-neutral-600 hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
+      <div class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 hover:shadow-[0_5px_15px_rgba(34,211,238,0.3)] p-4 border border-gray-400 dark:border-gray-600  hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
           <div class="mb-2 w-9 h-9">
             <svg-icon source="cython"></svg-icon>
           </div>
@@ -370,43 +351,43 @@
 
     </div>
 
-    <div class="mt-8 mb-8 divider"></div>
+    <div class="mt-8 mb-8 h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-800 to-transparent"></div>
 
     <h2 class="mb-10 font-light text-3xl md:text-4xl text-center tracking-tight geist-font" data-animate>Frameworks.</h2>
 
     <!-- frameworks -->
     <div class="flex flex-wrap justify-center gap-4">
-      <div class="flex flex-col justify-center items-center bg-neutral-800/70 hover:shadow-[0_5px_15px_rgba(52,211,153,0.15)] p-4 border border-neutral-600 hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
+      <div class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 hover:shadow-[0_5px_15px_rgba(34,211,238,0.3)] p-4 border border-gray-400 dark:border-gray-600  hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
           <div class="mb-2 w-9 h-9">
             <img src="static/dist/assets/foundry.webp" alt="">
           </div>
           <span>Foundry</span>
       </div>
-      <div class="flex flex-col justify-center items-center bg-neutral-800/70 hover:shadow-[0_5px_15px_rgba(52,211,153,0.15)] p-4 border border-neutral-600 hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
+      <div class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 hover:shadow-[0_5px_15px_rgba(34,211,238,0.3)] p-4 border border-gray-400 dark:border-gray-600  hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
           <div class="mb-2 w-9 h-9">
             <svg-icon source="fastapi"></svg-icon>
           </div>
           <span>Fastapi</span>
       </div>
-      <div class="flex flex-col justify-center items-center bg-neutral-800/70 hover:shadow-[0_5px_15px_rgba(52,211,153,0.15)] p-4 border border-neutral-600 hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
+      <div class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 hover:shadow-[0_5px_15px_rgba(34,211,238,0.3)] p-4 border border-gray-400 dark:border-gray-600  hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
           <div class="mb-2 w-9 h-9">
             <svg-icon source="tailwind"></svg-icon>
           </div>
           <span>Tailwindcss</span>
       </div>
-      <div class="flex flex-col justify-center items-center bg-neutral-800/70 hover:shadow-[0_5px_15px_rgba(52,211,153,0.15)] p-4 border border-neutral-600 hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
+      <div class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 hover:shadow-[0_5px_15px_rgba(34,211,238,0.3)] p-4 border border-gray-400 dark:border-gray-600  hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
           <div class="mb-2 w-9 h-9">
             <svg-icon source="htmx"></svg-icon>
           </div>
           <span>HTMX</span>
       </div>
-      <div class="flex flex-col justify-center items-center bg-neutral-800/70 hover:shadow-[0_5px_15px_rgba(52,211,153,0.15)] p-4 border border-neutral-600 hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
+      <div class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 hover:shadow-[0_5px_15px_rgba(34,211,238,0.3)] p-4 border border-gray-400 dark:border-gray-600  hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
           <div class="fill-gray-950 dark:fill-white mb-2 w-9 h-9">
             <svg-icon source="jinja"></svg-icon>
           </div>
           <span>Jinja</span>
       </div>
-      <div class="flex flex-col justify-center items-center bg-neutral-800/70 hover:shadow-[0_5px_15px_rgba(52,211,153,0.15)] p-4 border border-neutral-600 hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
+      <div class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 hover:shadow-[0_5px_15px_rgba(34,211,238,0.3)] p-4 border border-gray-400 dark:border-gray-600  hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
           <div class="mb-2 w-9 h-9">
             <svg-icon source="sqlAlchemy"></svg-icon>
           </div>
@@ -415,49 +396,49 @@
 
     </div>
 
-    <div class="mt-8 mb-8 divider"></div>
+    <div class="mt-8 mb-8 h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-800 to-transparent"></div>
 
     <h2 class="mb-10 font-light text-3xl md:text-4xl text-center tracking-tight geist-font" data-animate>Tools.</h2>
 
     <!-- Tools -->
     <div class="flex flex-wrap justify-center gap-4">
-      <div class="flex flex-col justify-center items-center bg-neutral-800/70 hover:shadow-[0_5px_15px_rgba(52,211,153,0.15)] p-4 border border-neutral-600 hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
+      <div class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 hover:shadow-[0_5px_15px_rgba(34,211,238,0.3)] p-4 border border-gray-400 dark:border-gray-600  hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
           <div class="mb-2 w-9 h-9">
             <svg-icon source="git"></svg-icon>
           </div>
           <span>Git</span>
       </div>
-      <div class="flex flex-col justify-center items-center bg-neutral-800/70 hover:shadow-[0_5px_15px_rgba(52,211,153,0.15)] p-4 border border-neutral-600 hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
+      <div class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 hover:shadow-[0_5px_15px_rgba(34,211,238,0.3)] p-4 border border-gray-400 dark:border-gray-600  hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
           <div class="mb-2 w-9 h-9">
             <svg-icon source="docker"></svg-icon>
           </div>
           <span>Docker</span>
         </div>
-      <div class="flex flex-col justify-center items-center bg-neutral-800/70 hover:shadow-[0_5px_15px_rgba(52,211,153,0.15)] p-4 border border-neutral-600 hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
+      <div class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 hover:shadow-[0_5px_15px_rgba(34,211,238,0.3)] p-4 border border-gray-400 dark:border-gray-600  hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
           <div class="mb-2 w-9 h-9">
             <svg-icon source="postgres"></svg-icon>
           </div>
           <span>Postgresql</span>
       </div>
-      <div class="flex flex-col justify-center items-center bg-neutral-800/70 hover:shadow-[0_5px_15px_rgba(52,211,153,0.15)] p-4 border border-neutral-600 hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
+      <div class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 hover:shadow-[0_5px_15px_rgba(34,211,238,0.3)] p-4 border border-gray-400 dark:border-gray-600  hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
           <div class="mb-2 w-9 h-9">
             <svg-icon source="sqlite"></svg-icon>
           </div>
           <span>SQLite</span>
       </div>
-      <div class="flex flex-col justify-center items-center bg-neutral-800/70 hover:shadow-[0_5px_15px_rgba(52,211,153,0.15)] p-4 border border-neutral-600 hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
+      <div class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 hover:shadow-[0_5px_15px_rgba(34,211,238,0.3)] p-4 border border-gray-400 dark:border-gray-600  hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
           <div class="mb-2 w-9 h-9">
             <svg-icon source="vite_icon"></svg-icon>
           </div>
           <span>Vite</span>
       </div>
-      <div class="flex flex-col justify-center items-center bg-neutral-800/70 hover:shadow-[0_5px_15px_rgba(52,211,153,0.15)] p-4 border border-neutral-600 hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
+      <div class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 hover:shadow-[0_5px_15px_rgba(34,211,238,0.3)] p-4 border border-gray-400 dark:border-gray-600  hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
           <div class="mb-2 w-9 h-9">
             <svg-icon source="nodejs"></svg-icon>
           </div>
           <span>Nodejs</span>
       </div>
-      <div class="flex flex-col justify-center items-center bg-neutral-800/70 hover:shadow-[0_5px_15px_rgba(52,211,153,0.15)] p-4 border border-neutral-600 hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
+      <div class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 hover:shadow-[0_5px_15px_rgba(34,211,238,0.3)] p-4 border border-gray-400 dark:border-gray-600  hover:border-emerald-400/50 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300">
           <div class="mb-2 w-9 h-9">
             <svg-icon source="figma"></svg-icon>
           </div>
@@ -469,7 +450,7 @@
 
 
   <!-- BLOG CTA -->
-  <section id="about" class="z-10 relative px-6 py-16">
+  <section id="about" class="z-10 relative px-6 py-16 transition-all duration-300 ease-in-out">
     <div class="relative flex md:flex-row flex-col-reverse items-center bg-white/5 mx-auto rounded-2xl max-w-4xl overflow-hidden glass-card" data-animate>
       <div class="rounded-none w-full h-full overflow-hidden">
         <img
@@ -489,22 +470,22 @@
 
         <div class="flex flex-row">
 
-          <a class="z-0 fill-[#5865F2] m-3 w-6 h-6 lift" href="#">
+          <a class="z-0 fill-[#5865F2] m-3 w-6 h-6 transform transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-600 backdrop-blur-md" href="#">
             <svg-icon source="discord">
             </svg-icon>
           </a>
 
-          <a class="z-0 fill-gray-950 dark:fill-white m-3 w-6 h-6 lift" href="https://github.com/dashingfon">
+          <a class="z-0 fill-gray-950 dark:fill-white m-3 w-6 h-6 transform transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-600 backdrop-blur-md" href="https://github.com/dashingfon">
             <svg-icon source="github">
             </svg-icon>
           </a>
 
-          <a class="z-0 fill-gray-950 dark:fill-white m-3 w-6 h-6 lift" href="https://x.com/mfonnwa">
+          <a class="z-0 fill-gray-950 dark:fill-white m-3 w-6 h-6 transform transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-600 backdrop-blur-md" href="https://x.com/mfonnwa">
             <svg-icon source="x">
             </svg-icon>
           </a>
 
-          <a class="z-0 m-3 w-6 h-6 lift" href="https://www.linkedin.com/in/mfon-nwa111/">
+          <a class="z-0 m-3 w-6 h-6 transform transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-600 backdrop-blur-md" href="https://www.linkedin.com/in/mfon-nwa111/">
             <svg-icon source="linkedin">
             </svg-icon>
           </a>
@@ -512,13 +493,13 @@
         </div>
 
         <div class="flex justify-between mt-3">
-          <a href="https://github.com/dashingfon" class="group flex flex-row items-center gap-2 px-5 rounded-lg text-sm primary-button">
+          <a href="https://github.com/dashingfon" class="group flex flex-row items-center gap-2 px-5 rounded-lg text-sm bg-gray-300 dark:bg-gray-700 hover:bg-gray-200 hover:dark:bg-gray-800 border border-gray-600 dark:border-gray-400 border-solid font-normal backdrop-blur-sm hover:transform hover:-translate-y-1 hover:shadow-md hover:shadow-gray-700 dark:hover:shadow-gray-300">
             <div class="w-5 h-5">
               <svg-icon source="briefcase"></svg-icon>
             </div>
             Audit Portfolio
           </a>
-          <a class="group flex flex-row items-center gap-2 px-5 py-3 rounded-lg text-sm primary-button" href="./assets/resume.pdf" target="_blank">
+          <a class="group flex flex-row items-center gap-2 px-5 py-3 rounded-lg text-sm bg-gray-300 dark:bg-gray-700 hover:bg-gray-200 hover:dark:bg-gray-800 border border-gray-600 dark:border-gray-400 border-solid font-normal backdrop-blur-sm hover:transform hover:-translate-y-1 hover:shadow-md hover:shadow-gray-700 dark:hover:shadow-gray-300" href="./assets/resume.pdf" target="_blank">
             <div class="w-5 h-5">
               <svg-icon source="arrow_up_right"></svg-icon>
             </div>
@@ -541,7 +522,7 @@
         <!-- <div class="flex justify-center items-center mb-4 rounded-xl h-32 project-image">
         </div> -->
         <h3 class="mb-2 font-medium text-lg geist-font">Dayones</h3>
-        <p class="mb-4 text-gray-300 text-sm">Dayones is a blockchain-powered e-commerce platform designed to make online shopping more secure and reliable for consumers.
+        <p class="mb-4 text-sm">Dayones is a blockchain-powered e-commerce platform designed to make online shopping more secure and reliable for consumers.
 
         By acting as a tamper-proof middleman, it protects transactions from fraud and manipulation, ensuring a safe and trustworthy environment for both buyers and sellers.</p>
        <div class="flex flex-wrap gap-2">
@@ -573,7 +554,7 @@
         <!-- <div class="flex justify-center items-center mb-4 rounded-xl h-32 project-image">
         </div> -->
         <h3 class="mb-2 font-medium text-lg geist-font">Resolver</h3>
-        <p class="mb-4 text-gray-300 text-sm">Resolver makes use of symbolic execution to determine the constraints on a smart contract and determine the conditions that results in a successful execution.</p>
+        <p class="mb-4 text-sm">Resolver makes use of symbolic execution to determine the constraints on a smart contract and determine the conditions that results in a successful execution.</p>
         <div class="flex flex-wrap gap-2">
 
           <div class="w-6 h-6">
@@ -587,7 +568,7 @@
         <!-- <div class="flex justify-center items-center mb-4 rounded-xl h-32 project-image">
         </div> -->
         <h3 class="mb-2 font-medium text-lg geist-font">Crypto Arbitrage</h3>
-        <p class="mb-4 text-gray-300 text-sm">Crypto-Arbitrage is an arbitrage bot that spots the price discrepancies accross EVM compatible decentralized exchanges and trades using smart contracts CryptoArbitrage implements flash loans to maximize the potential profit</p>
+        <p class="mb-4 text-sm">Crypto-Arbitrage is an arbitrage bot that spots the price discrepancies accross EVM compatible decentralized exchanges and trades using smart contracts CryptoArbitrage implements flash loans to maximize the potential profit</p>
         <div class="flex flex-row justify-start items-center gap-3">
 
           <div class="w-6 h-6">
@@ -626,11 +607,11 @@
             alt="" class="opacity-80 rounded-xl w-full h-full object-cover">
         </div>
         <h3 class="mb-2 font-medium text-lg geist-font">Stake.Link</h3>
-        <p class="mb-4 text-gray-300 text-sm">A first-of-its-kind liquid delegated staking platform delivering DeFi composability for Chainlink Staking. Built by premier Chainlink ecosystem developer LinkPool, powered by Chainlink node operators, and governed by the stake.link DAO</p>
+        <p class="mb-4 text-sm">A first-of-its-kind liquid delegated staking platform delivering DeFi composability for Chainlink Staking. Built by premier Chainlink ecosystem developer LinkPool, powered by Chainlink node operators, and governed by the stake.link DAO</p>
         <div class="flex flex-wrap gap-2">
-          <span class="px-2 py-1 rounded text-xs skill-badge">Defi</span>
-          <span class="px-2 py-1 rounded text-xs skill-badge">Hardhat</span>
-          <span class="px-2 py-1 rounded text-xs skill-badge">Bridge</span>
+          <span class="px-2 py-1 rounded text-xs backdrop-blur-md bg-gray-200 dark:bg-gray-800 border border-gray-400 dark:border-gray-600 hover:bg-gray-300 dark:hover:bg-gray-700">Defi</span>
+          <span class="px-2 py-1 rounded text-xs backdrop-blur-md bg-gray-200 dark:bg-gray-800 border border-gray-400 dark:border-gray-600 hover:bg-gray-300 dark:hover:bg-gray-700">Hardhat</span>
+          <span class="px-2 py-1 rounded text-xs backdrop-blur-md bg-gray-200 dark:bg-gray-800 border border-gray-400 dark:border-gray-600 hover:bg-gray-300 dark:hover:bg-gray-700">Bridge</span>
         </div>
       </a>
       <!-- Card 2 -->
@@ -640,10 +621,10 @@
             class="opacity-80 rounded-xl w-full h-full object-cover">
         </div>
         <h3 class="mb-2 font-medium text-lg geist-font">Biconomy: Nexus</h3>
-        <p class="mb-4 text-gray-300 text-sm">The Biconomy offers an Account Abstraction toolkit that enables the simplest UX on your dApp, wallet, or appchain. Built on top of ERC 4337, Biconomy offers a full-stack solution for tapping into the power of our Smart Accounts Platform, Paymasters, and Bundlers</p>
+        <p class="mb-4 text-sm">The Biconomy offers an Account Abstraction toolkit that enables the simplest UX on your dApp, wallet, or appchain. Built on top of ERC 4337, Biconomy offers a full-stack solution for tapping into the power of our Smart Accounts Platform, Paymasters, and Bundlers</p>
         <div class="flex flex-wrap gap-2">
-          <span class="px-2 py-1 rounded text-xs skill-badge">Hardhat</span>
-          <span class="px-2 py-1 rounded text-xs skill-badge">Foundry</span>
+          <span class="px-2 py-1 rounded text-xs backdrop-blur-md bg-gray-200 dark:bg-gray-800 border border-gray-400 dark:border-gray-600 hover:bg-gray-300 dark:hover:bg-gray-700">Hardhat</span>
+          <span class="px-2 py-1 rounded text-xs backdrop-blur-md bg-gray-200 dark:bg-gray-800 border border-gray-400 dark:border-gray-600 hover:bg-gray-300 dark:hover:bg-gray-700">Foundry</span>
         </div>
       </a>
       <!-- Card 3 -->
@@ -654,10 +635,10 @@
             alt="" class="opacity-80 rounded-xl w-full h-full object-cover">
         </div>
         <h3 class="mb-2 font-medium text-lg geist-font">Chainlink Payment Abstraction</h3>
-        <p class="mb-4 text-gray-300 text-sm">Payment Abstraction is a smart contract system that streamlines Chainlink service payments by accepting multiple tokens across chains, consolidating them via CCIP, converting them to LINK using Automation and DEXs, and making LINK available for service providers to withdraw.</p>
+        <p class="mb-4 text-sm">Payment Abstraction is a smart contract system that streamlines Chainlink service payments by accepting multiple tokens across chains, consolidating them via CCIP, converting them to LINK using Automation and DEXs, and making LINK available for service providers to withdraw.</p>
         <div class="flex flex-wrap gap-2">
-          <span class="px-2 py-1 rounded text-xs skill-badge">Foundry</span>
-          <span class="px-2 py-1 rounded text-xs skill-badge">Chainlink</span>
+          <span class="px-2 py-1 rounded text-xs backdrop-blur-md bg-gray-200 dark:bg-gray-800 border border-gray-400 dark:border-gray-600 hover:bg-gray-300 dark:hover:bg-gray-700">Foundry</span>
+          <span class="px-2 py-1 rounded text-xs backdrop-blur-md bg-gray-200 dark:bg-gray-800 border border-gray-400 dark:border-gray-600 hover:bg-gray-300 dark:hover:bg-gray-700">Chainlink</span>
         </div>
       </a>
     </div>
@@ -667,12 +648,12 @@
   <section id="contact" class="z-10 relative px-6 pt-24 pb-0">
     <div class="space-y-8 mx-auto max-w-2xl text-center" data-animate>
       <h2 class="font-light text-3xl md:text-4xl tracking-tight geist-font">Let’s Build and Secure Your Protocol</h2>
-      <p class="text-gray-300 leading-relaxed">
+      <p class="leading-relaxed">
         Ready for an audit or looking for a collaborative build? Drop me a chat and let’s make your smart contracts
         bulletproof.
       </p>
       <div class="flex sm:flex-row flex-col justify-center items-center gap-4">
-        <a href="mailto:mfonnwa@gmail.com" class="flex flex-row justify-center gap-2 px-6 py-3 rounded-lg text-sm primary-button">
+        <a href="mailto:mfonnwa@gmail.com" class="flex flex-row justify-center gap-2 px-6 py-3 rounded-lg text-sm bg-gray-300 dark:bg-gray-700 hover:bg-gray-200 hover:dark:bg-gray-800 border border-gray-600 dark:border-gray-400 border-solid font-normal backdrop-blur-sm hover:transform hover:-translate-y-1 hover:shadow-md hover:shadow-gray-700 dark:hover:shadow-gray-300">
           <div class="w-5 h-5">
             <svg-icon source="envelope"></svg-icon>
           </div>
@@ -681,22 +662,22 @@
       </div>
       <div class="flex flex-row justify-center gap-3 align-middle">
         
-        <a class="fill-[#5865F2] m-4 w-6 h-6 lift" href="#">
+        <a class="fill-[#5865F2] m-4 w-6 h-6 transform transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-600 backdrop-blur-md" href="#">
           <svg-icon source="discord">
           </svg-icon>
         </a>
 
-        <a class="fill-gray-950 dark:fill-white m-4 w-6 h-6 lift" href="https://github.com/dashingfon">
+        <a class="fill-gray-950 dark:fill-white m-4 w-6 h-6 transform transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-600 backdrop-blur-md" href="https://github.com/dashingfon">
           <svg-icon source="github">
           </svg-icon>
         </a>
 
-        <a class="fill-gray-950 dark:fill-white m-4 w-6 h-6 lift" href="https://x.com/mfonnwa">
+        <a class="fill-gray-950 dark:fill-white m-4 w-6 h-6 transform transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-600 backdrop-blur-md" href="https://x.com/mfonnwa">
           <svg-icon source="x">
           </svg-icon>
         </a>
 
-        <a class="m-4 w-6 h-6 lift" href="https://www.linkedin.com/in/mfon-nwa111/">
+        <a class="m-4 w-6 h-6 transform transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-gray-600 backdrop-blur-md" href="https://www.linkedin.com/in/mfon-nwa111/">
           <svg-icon source="linkedin">
           </svg-icon>
         </a>
