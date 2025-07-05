@@ -24,16 +24,16 @@
       position: absolute;
       inset: 0;
       padding: 1px;
-      background: linear-gradient(135deg, rgba(99, 102, 241, .3), rgba(139, 92, 246, .3), rgba(59, 130, 246, .3));
       border-radius: inherit;
+      background: linear-gradient(135deg, rgba(99, 102, 241, .3), rgba(139, 92, 246, .3), rgba(59, 130, 246, .3));
       mask: linear-gradient(#fff 0 0)content-box, linear-gradient(#fff 0 0);
       mask-composite: subtract;
       -webkit-mask-composite: xor
     }
 
     .glass-button {
-      background: rgba(255, 255, 255, .1);
       backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, .1);
       border: 1px solid rgba(255, 255, 255, .2);
       transition: all .3s ease;
       opacity: .75
@@ -51,15 +51,15 @@
     }
 
     .primary-button {
-      background: rgba(255, 255, 255, .15);
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, .3);
+      /* background: rgba(255, 255, 255, .15); */
+      /* border: 1px solid rgba(255, 255, 255, .3); */
       transition: all .3s ease
     }
 
     .primary-button:hover {
-      background: rgba(255, 255, 255, .25);
       transform: translateY(-2px);
+      background: rgba(255, 255, 255, .25);
       box-shadow: 0 20px 40px rgba(0, 0, 0, .4)
     }
     
@@ -78,8 +78,8 @@
     }
 
     .skill-badge {
-      background: rgba(255, 255, 255, .08);
       backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, .08);
       border: 1px solid rgba(255, 255, 255, .15)
     }
 
@@ -247,8 +247,8 @@
 
   <div id="side-menu" class="md:hidden lg:hidden top-0 right-0 z-130 fixed bg-gradient-to-br from-gray-50 dark:from-gray-950 via-[#ECEDFD] dark:via-[#030425] to-gray-50 dark:to-gray-950 w-full h-full transition-transform translate-x-full duration-300 ease-in-out transform">
       <div class="flex flex-col p-6 h-full">
-        <div class="flex justify-between items-center mb-8">
-          <a href="#" class="font-semibold text-xl tracking-tight">Mfon Stephen</a>
+        <div class="flex justify-between items-center mb-8 transition-all duration-300 ease-in-out">
+          <a href="#" class="font-semibold text-xl tracking-tigh">Mfon Stephen</a>
           <button onclick="document.getElementById('side-menu').classList.toggle('translate-x-full')" class="w-8 h-8">
             <svg-icon source="close">
             </svg-icon>
@@ -270,24 +270,24 @@
 
     <div class="float-animation space-y-12 mx-auto max-w-5xl text-center">
       <header>
-        <h1 class="font-light text-5xl md:text-6xl lg:text-7xl leading-[1.12] tracking-tight geist-font">
+        <h1 class="font-light text-5xl md:text-6xl lg:text-7xl leading-[1.12] tracking-tight transition-all duration-300 ease-in-out geist-font">
           Full Stack Engineer.<span class="block tracking-tight gradient-text">Web3 Security Researcher.</span>
         </h1>
       </header>
-      <p class="mx-auto max-w-3xl text-lg md:text-xl leading-relaxed">
+      <p class="mx-auto max-w-3xl text-lg md:text-xl leading-relaxed transition-all duration-300 ease-in-out">
         I audit, hack, and build decentralized applications.<br class="hidden md:block">
         Passionate about safeguarding Web3 ecosystems<br class="hidden md:block">
         and pushing the boundaries of blockchain tech.
       </p>
       <div class="flex sm:flex-row flex-col justify-center items-center gap-4">
-        <a class="inline-flex justify-center items-center gap-4 px-6 py-3 rounded-lg text-sm primary-button" href="https://github.com/dashingfon">
+        <a class="inline-flex justify-center items-center gap-4 bg-gray-300 dark:bg-gray-700 px-6 py-3 border border-gray-600 dark:border-gray-400 border-solid rounded-lg text-sm dborder-gray-600 primary-button" href="https://github.com/dashingfon">
           <div class="fill-gray-950 dark:fill-white w-5 h-5">
             <svg-icon source="github"></svg-icon>
           </div>
           Github
         </a>
-        <a class="inline-flex justify-center items-center gap-4 px-6 py-3 rounded-lg text-sm primary-button" href="./assets/resume.pdf" target="_blank">
-          <div class="w-5 h-5">
+        <a class="inline-flex justify-center items-center gap-4 px-6 py-3 border border-gray-600 dark:border-gray-400 rounded-lg text-sm primary-button" href="./assets/resume.pdf" target="_blank">
+          <div class="w-5 h-5 transition-all duration-300 ease-in-out">
             <svg-icon source="arrow_up_right"></svg-icon>
           </div>
           Resume
@@ -469,7 +469,7 @@
 
 
   <!-- BLOG CTA -->
-  <section id="about" class="z-10 relative px-6 py-16">
+  <section id="about" class="z-10 relative px-6 py-16 transition-all duration-300 ease-in-out">
     <div class="relative flex md:flex-row flex-col-reverse items-center bg-white/5 mx-auto rounded-2xl max-w-4xl overflow-hidden glass-card" data-animate>
       <div class="rounded-none w-full h-full overflow-hidden">
         <img

@@ -26,16 +26,16 @@
       position: absolute;
       inset: 0;
       padding: 1px;
-      background: linear-gradient(135deg, rgba(99, 102, 241, .3), rgba(139, 92, 246, .3), rgba(59, 130, 246, .3));
       border-radius: inherit;
+      background: linear-gradient(135deg, rgba(99, 102, 241, .3), rgba(139, 92, 246, .3), rgba(59, 130, 246, .3));
       mask: linear-gradient(#fff 0 0)content-box, linear-gradient(#fff 0 0);
       mask-composite: subtract;
       -webkit-mask-composite: xor
     }
 
     .glass-button {
-      background: rgba(255, 255, 255, .1);
       backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, .1);
       border: 1px solid rgba(255, 255, 255, .2);
       transition: all .3s ease;
       opacity: .75
@@ -51,19 +51,6 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent
     }
-
-    .primary-button {
-      background: rgba(255, 255, 255, .15);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, .3);
-      transition: all .3s ease
-    }
-
-    .primary-button:hover {
-      background: rgba(255, 255, 255, .25);
-      transform: translateY(-2px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, .4)
-    }
     
     .lift {
       transition: all .3s ease
@@ -74,14 +61,9 @@
       box-shadow: 0 20px 40px rgba(0, 0, 0, .4)
     }
 
-    .divider {
-      height: 1px;
-      background: linear-gradient(to right, transparent, rgba(255, 255, 255, .1), transparent)
-    }
-
     .skill-badge {
-      background: rgba(255, 255, 255, .08);
       backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, .08);
       border: 1px solid rgba(255, 255, 255, .15)
     }
 
@@ -247,8 +229,8 @@
 
   <div id="side-menu" class="md:hidden lg:hidden top-0 right-0 z-130 fixed bg-gradient-to-br from-gray-50 dark:from-gray-950 via-[#ECEDFD] dark:via-[#030425] to-gray-50 dark:to-gray-950 w-full h-full transition-transform translate-x-full duration-300 ease-in-out transform">
       <div class="flex flex-col p-6 h-full">
-        <div class="flex justify-between items-center mb-8">
-          <a href="#" class="font-semibold text-xl tracking-tight">Mfon Stephen</a>
+        <div class="flex justify-between items-center mb-8 transition-all duration-300 ease-in-out">
+          <a href="#" class="font-semibold text-xl tracking-tigh">Mfon Stephen</a>
           <button onclick="document.getElementById('side-menu').classList.toggle('translate-x-full')" class="w-8 h-8">
             <svg-icon source="close">
             </svg-icon>
@@ -261,7 +243,7 @@
         </ul>
       </div>
     </div>
-  <div class="z-10 relative divider"></div>
+  <div class="z-10 relative h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-800 to-transparent"></div>
 
   <!-- HERO -->
   <section id="hero" class="z-10 relative flex flex-col justify-center items-center px-6 py-20 w-full min-h-screen">
@@ -270,24 +252,24 @@
 
     <div class="float-animation space-y-12 mx-auto max-w-5xl text-center">
       <header>
-        <h1 class="font-light text-5xl md:text-6xl lg:text-7xl leading-[1.12] tracking-tight geist-font">
+        <h1 class="font-light text-5xl md:text-6xl lg:text-7xl leading-[1.12] tracking-tight transition-all duration-300 ease-in-out geist-font">
           Full Stack Engineer.<span class="block tracking-tight gradient-text">Web3 Security Researcher.</span>
         </h1>
       </header>
-      <p class="mx-auto max-w-3xl text-lg md:text-xl leading-relaxed">
+      <p class="mx-auto max-w-3xl text-lg md:text-xl leading-relaxed transition-all duration-300 ease-in-out">
         I audit, hack, and build decentralized applications.<br class="hidden md:block">
         Passionate about safeguarding Web3 ecosystems<br class="hidden md:block">
         and pushing the boundaries of blockchain tech.
       </p>
       <div class="flex sm:flex-row flex-col justify-center items-center gap-4">
-        <a class="inline-flex justify-center items-center gap-4 px-6 py-3 rounded-lg text-sm primary-button" href="https://github.com/dashingfon">
+        <a class="inline-flex justify-center items-center gap-4 bg-gray-300 dark:bg-gray-700 px-6 py-3 border border-gray-600 dark:border-gray-400 border-solid rounded-lg text-sm font-normal backdrop-blur-sm hover:transform hover:-translate-y-1 hover:shadow-md hover:shadow-gray-700 dark:hover:shadow-gray-300" href="https://github.com/dashingfon">
           <div class="fill-gray-950 dark:fill-white w-5 h-5">
             <svg-icon source="github"></svg-icon>
           </div>
           Github
         </a>
-        <a class="inline-flex justify-center items-center gap-4 px-6 py-3 rounded-lg text-sm primary-button" href="./assets/resume.pdf" target="_blank">
-          <div class="w-5 h-5">
+        <a class="inline-flex justify-center items-center gap-4 px-6 py-3 border border-gray-600 dark:border-gray-400 rounded-lg text-sm font-normal backdrop-blur-sm hover:transform hover:-translate-y-1 hover:shadow-md hover:shadow-gray-700 dark:hover:shadow-gray-300" href="./assets/resume.pdf" target="_blank">
+          <div class="w-5 h-5 transition-all duration-300 ease-in-out">
             <svg-icon source="arrow_up_right"></svg-icon>
           </div>
           Resume
@@ -295,7 +277,7 @@
       </div>
     </div>
 
-    <div class="mt-24 mb-16 divider"></div>
+    <div class="mt-24 mb-16 h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-800 to-transparent"></div>
 
     <!-- STATS -->
     <div class="flex sm:flex-row flex-col justify-center items-center gap-8 text-center fade-in">
@@ -317,7 +299,7 @@
   </section>
 
   <section id="projects" class="z-10 relative px-6 md:px-24 lg:px-48 py-16">
-    <div class="mt-16 mb-16 divider"></div>
+    <div class="mt-16 mb-16 h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-800 to-transparent"></div>
     <h2 class="mb-10 font-light text-3xl md:text-4xl text-center tracking-tight geist-font" data-animate>Languages.</h2>
 
 
@@ -370,7 +352,7 @@
 
     </div>
 
-    <div class="mt-8 mb-8 divider"></div>
+    <div class="mt-8 mb-8 h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-800 to-transparent"></div>
 
     <h2 class="mb-10 font-light text-3xl md:text-4xl text-center tracking-tight geist-font" data-animate>Frameworks.</h2>
 
@@ -415,7 +397,7 @@
 
     </div>
 
-    <div class="mt-8 mb-8 divider"></div>
+    <div class="mt-8 mb-8 h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-800 to-transparent"></div>
 
     <h2 class="mb-10 font-light text-3xl md:text-4xl text-center tracking-tight geist-font" data-animate>Tools.</h2>
 
@@ -469,7 +451,7 @@
 
 
   <!-- BLOG CTA -->
-  <section id="about" class="z-10 relative px-6 py-16">
+  <section id="about" class="z-10 relative px-6 py-16 transition-all duration-300 ease-in-out">
     <div class="relative flex md:flex-row flex-col-reverse items-center bg-white/5 mx-auto rounded-2xl max-w-4xl overflow-hidden glass-card" data-animate>
       <div class="rounded-none w-full h-full overflow-hidden">
         <img
@@ -512,13 +494,13 @@
         </div>
 
         <div class="flex justify-between mt-3">
-          <a href="https://github.com/dashingfon" class="group flex flex-row items-center gap-2 px-5 rounded-lg text-sm primary-button">
+          <a href="https://github.com/dashingfon" class="group flex flex-row items-center gap-2 px-5 rounded-lg text-sm bg-gray-300 dark:bg-gray-700 border border-gray-600 dark:border-gray-400 border-solid font-normal backdrop-blur-sm hover:transform hover:-translate-y-1 hover:shadow-md hover:shadow-gray-700 dark:hover:shadow-gray-300">
             <div class="w-5 h-5">
               <svg-icon source="briefcase"></svg-icon>
             </div>
             Audit Portfolio
           </a>
-          <a class="group flex flex-row items-center gap-2 px-5 py-3 rounded-lg text-sm primary-button" href="./assets/resume.pdf" target="_blank">
+          <a class="group flex flex-row items-center gap-2 px-5 py-3 rounded-lg text-sm bg-gray-300 dark:bg-gray-700 border border-gray-600 dark:border-gray-400 border-solid font-normal backdrop-blur-sm hover:transform hover:-translate-y-1 hover:shadow-md hover:shadow-gray-700 dark:hover:shadow-gray-300" href="./assets/resume.pdf" target="_blank">
             <div class="w-5 h-5">
               <svg-icon source="arrow_up_right"></svg-icon>
             </div>
@@ -541,7 +523,7 @@
         <!-- <div class="flex justify-center items-center mb-4 rounded-xl h-32 project-image">
         </div> -->
         <h3 class="mb-2 font-medium text-lg geist-font">Dayones</h3>
-        <p class="mb-4 text-gray-300 text-sm">Dayones is a blockchain-powered e-commerce platform designed to make online shopping more secure and reliable for consumers.
+        <p class="mb-4 text-sm">Dayones is a blockchain-powered e-commerce platform designed to make online shopping more secure and reliable for consumers.
 
         By acting as a tamper-proof middleman, it protects transactions from fraud and manipulation, ensuring a safe and trustworthy environment for both buyers and sellers.</p>
        <div class="flex flex-wrap gap-2">
@@ -573,7 +555,7 @@
         <!-- <div class="flex justify-center items-center mb-4 rounded-xl h-32 project-image">
         </div> -->
         <h3 class="mb-2 font-medium text-lg geist-font">Resolver</h3>
-        <p class="mb-4 text-gray-300 text-sm">Resolver makes use of symbolic execution to determine the constraints on a smart contract and determine the conditions that results in a successful execution.</p>
+        <p class="mb-4 text-sm">Resolver makes use of symbolic execution to determine the constraints on a smart contract and determine the conditions that results in a successful execution.</p>
         <div class="flex flex-wrap gap-2">
 
           <div class="w-6 h-6">
@@ -587,7 +569,7 @@
         <!-- <div class="flex justify-center items-center mb-4 rounded-xl h-32 project-image">
         </div> -->
         <h3 class="mb-2 font-medium text-lg geist-font">Crypto Arbitrage</h3>
-        <p class="mb-4 text-gray-300 text-sm">Crypto-Arbitrage is an arbitrage bot that spots the price discrepancies accross EVM compatible decentralized exchanges and trades using smart contracts CryptoArbitrage implements flash loans to maximize the potential profit</p>
+        <p class="mb-4 text-sm">Crypto-Arbitrage is an arbitrage bot that spots the price discrepancies accross EVM compatible decentralized exchanges and trades using smart contracts CryptoArbitrage implements flash loans to maximize the potential profit</p>
         <div class="flex flex-row justify-start items-center gap-3">
 
           <div class="w-6 h-6">
@@ -626,9 +608,9 @@
             alt="" class="opacity-80 rounded-xl w-full h-full object-cover">
         </div>
         <h3 class="mb-2 font-medium text-lg geist-font">Stake.Link</h3>
-        <p class="mb-4 text-gray-300 text-sm">A first-of-its-kind liquid delegated staking platform delivering DeFi composability for Chainlink Staking. Built by premier Chainlink ecosystem developer LinkPool, powered by Chainlink node operators, and governed by the stake.link DAO</p>
+        <p class="mb-4 text-sm">A first-of-its-kind liquid delegated staking platform delivering DeFi composability for Chainlink Staking. Built by premier Chainlink ecosystem developer LinkPool, powered by Chainlink node operators, and governed by the stake.link DAO</p>
         <div class="flex flex-wrap gap-2">
-          <span class="px-2 py-1 rounded text-xs skill-badge">Defi</span>
+          <span class="px-2 py-1 rounded text-xs skill-badge bg-gray-300">Defi</span>
           <span class="px-2 py-1 rounded text-xs skill-badge">Hardhat</span>
           <span class="px-2 py-1 rounded text-xs skill-badge">Bridge</span>
         </div>
@@ -640,7 +622,7 @@
             class="opacity-80 rounded-xl w-full h-full object-cover">
         </div>
         <h3 class="mb-2 font-medium text-lg geist-font">Biconomy: Nexus</h3>
-        <p class="mb-4 text-gray-300 text-sm">The Biconomy offers an Account Abstraction toolkit that enables the simplest UX on your dApp, wallet, or appchain. Built on top of ERC 4337, Biconomy offers a full-stack solution for tapping into the power of our Smart Accounts Platform, Paymasters, and Bundlers</p>
+        <p class="mb-4 text-sm">The Biconomy offers an Account Abstraction toolkit that enables the simplest UX on your dApp, wallet, or appchain. Built on top of ERC 4337, Biconomy offers a full-stack solution for tapping into the power of our Smart Accounts Platform, Paymasters, and Bundlers</p>
         <div class="flex flex-wrap gap-2">
           <span class="px-2 py-1 rounded text-xs skill-badge">Hardhat</span>
           <span class="px-2 py-1 rounded text-xs skill-badge">Foundry</span>
@@ -654,7 +636,7 @@
             alt="" class="opacity-80 rounded-xl w-full h-full object-cover">
         </div>
         <h3 class="mb-2 font-medium text-lg geist-font">Chainlink Payment Abstraction</h3>
-        <p class="mb-4 text-gray-300 text-sm">Payment Abstraction is a smart contract system that streamlines Chainlink service payments by accepting multiple tokens across chains, consolidating them via CCIP, converting them to LINK using Automation and DEXs, and making LINK available for service providers to withdraw.</p>
+        <p class="mb-4 text-sm">Payment Abstraction is a smart contract system that streamlines Chainlink service payments by accepting multiple tokens across chains, consolidating them via CCIP, converting them to LINK using Automation and DEXs, and making LINK available for service providers to withdraw.</p>
         <div class="flex flex-wrap gap-2">
           <span class="px-2 py-1 rounded text-xs skill-badge">Foundry</span>
           <span class="px-2 py-1 rounded text-xs skill-badge">Chainlink</span>
@@ -667,12 +649,12 @@
   <section id="contact" class="z-10 relative px-6 pt-24 pb-0">
     <div class="space-y-8 mx-auto max-w-2xl text-center" data-animate>
       <h2 class="font-light text-3xl md:text-4xl tracking-tight geist-font">Let’s Build and Secure Your Protocol</h2>
-      <p class="text-gray-300 leading-relaxed">
+      <p class="leading-relaxed">
         Ready for an audit or looking for a collaborative build? Drop me a chat and let’s make your smart contracts
         bulletproof.
       </p>
       <div class="flex sm:flex-row flex-col justify-center items-center gap-4">
-        <a href="mailto:mfonnwa@gmail.com" class="flex flex-row justify-center gap-2 px-6 py-3 rounded-lg text-sm primary-button">
+        <a href="mailto:mfonnwa@gmail.com" class="flex flex-row justify-center gap-2 px-6 py-3 rounded-lg text-sm bg-gray-300 dark:bg-gray-700 border border-gray-600 dark:border-gray-400 border-solid font-normal backdrop-blur-sm hover:transform hover:-translate-y-1 hover:shadow-md hover:shadow-gray-700 dark:hover:shadow-gray-300">
           <div class="w-5 h-5">
             <svg-icon source="envelope"></svg-icon>
           </div>
