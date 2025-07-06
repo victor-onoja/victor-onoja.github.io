@@ -1,29 +1,29 @@
-import { dirname, resolve, join} from 'node:path'
-import { fileURLToPath } from 'node:url'
-import { defineConfig } from 'vite'
-import { readdirSync, statSync } from 'node:fs'
-import tailwindcss from '@tailwindcss/vite'
+import { dirname, resolve, join } from "node:path";
+import { fileURLToPath } from "node:url";
+import { defineConfig } from "vite";
+import { readdirSync, statSync } from "node:fs";
+import tailwindcss from "@tailwindcss/vite";
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
-
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // Helper function to find all HTML files
 function getHtmlEntries(dir) {
-  const entries = {}
-  const files = readdirSync(dir)
-  
-  files.forEach(file => {
-    const fullPath = join(dir, file)
-    if (statSync(fullPath).isFile() && file.endsWith('.html')) {
-      const name = file.replace('.html', '')
-      entries[name] = resolve(fullPath)
+  const entries = {};
+  const files = readdirSync(dir);
+
+  files.forEach((file) => {
+    const fullPath = join(dir, file);
+    if (statSync(fullPath).isFile() && file.endsWith(".html")) {
+      const name = file.replace(".html", "");
+      entries[name] = resolve(fullPath);
     }
-  })
-  
-  return entries
+  });
+
+  return entries;
 }
 
 export default defineConfig({
+  root: ".",
   build: {
     outDir: "./dist",
     sourcemap: true,
@@ -34,12 +34,10 @@ export default defineConfig({
         chunkFileNames: "[name].js",
         assetFileNames: "assets/[name][extname]",
       },
-        input: getHtmlEntries(__dirname)
-        // input: getHtmlEntries('./src')
-        // input: "sample.html"
-    }
+      input: {
+        main: resolve(__dirname, "index.html"),
+      },
+    },
   },
-  plugins: [
-    tailwindcss(),
-  ],
-})
+  plugins: [tailwindcss()],
+});

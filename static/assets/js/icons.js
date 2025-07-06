@@ -1,5 +1,5 @@
-import python from '../icons/python.svg?raw';
-import javascript from '../icons/java-script.svg?raw';
+import python from "../icons/python.svg?raw";
+import javascript from "../icons/java-script.svg?raw";
 import ham_r from "../icons/hamburger-regular.svg?raw";
 import ham_f from "../icons/hamburger-fill.svg?raw";
 import arrow_up_right from "../icons/arrow-up-right.svg?raw";
@@ -27,44 +27,48 @@ import tailwind from "../icons/tailwindcss.svg?raw";
 import vite_icon from "../icons/Vite-icon.svg?raw";
 import x_icon from "../icons/x.svg?raw";
 import x_mark from "../icons/x-bold.svg?raw";
+import dart from "../icons/dart.svg?raw";
+import typescript from "../icons/typescript.svg?raw";
 
 const icons = {
-    "python": python,
-    "javascript": javascript,
-    "ham_r": ham_r,
-    "ham_f": ham_f,
-    "arrow_up_right": arrow_up_right,
-    "github": github,
-    "briefcase": briefcase,
-    "envelope": envelope,
-    "css": css,
-    "cython": cython,
-    "discord": discord,
-    "docker": docker,
-    "fastapi": fastapi,
-    "figma": figma,
-    "git": git,
-    "html5": html5,
-    "htmx": htmx,
-    "jinja": jinja,
-    "linkedin": linkedin,
-    "nodejs": nodejs,
-    "postgres": postgres,
-    "rust": rust,
-    "solidity": solidity,
-    "sqlAlchemy": sqlAlchemy,
-    "sqlite": sqlite,
-    "tailwind": tailwind,
-    "vite_icon": vite_icon,
-    "x": x_icon,
-    "close": x_mark
-}
+  python: python,
+  javascript: javascript,
+  ham_r: ham_r,
+  ham_f: ham_f,
+  arrow_up_right: arrow_up_right,
+  github: github,
+  briefcase: briefcase,
+  envelope: envelope,
+  css: css,
+  cython: cython,
+  discord: discord,
+  docker: docker,
+  fastapi: fastapi,
+  figma: figma,
+  git: git,
+  html5: html5,
+  htmx: htmx,
+  jinja: jinja,
+  linkedin: linkedin,
+  nodejs: nodejs,
+  postgres: postgres,
+  rust: rust,
+  solidity: solidity,
+  sqlAlchemy: sqlAlchemy,
+  sqlite: sqlite,
+  tailwind: tailwind,
+  vite_icon: vite_icon,
+  x: x_icon,
+  close: x_mark,
+  dart: dart,
+  typescript: typescript,
+};
 
 class SVGIcon extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML = icons[this.getAttribute('source')];
-    };
+  connectedCallback() {
+    this.innerHTML = icons[this.getAttribute("source")];
+  }
 }
 
 // for loop to register icons
-customElements.define('svg-icon', SVGIcon);
+customElements.define("svg-icon", SVGIcon);
