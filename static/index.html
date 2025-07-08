@@ -177,6 +177,54 @@
       .switch input:checked ~ .slider .cloud {
         opacity: 1;
       }
+
+      .dynamic-text-wrapper {
+        display: block;
+        height: 2.5rem;
+        overflow: hidden;
+        position: relative;
+      }
+      .dynamic-text-wrapper .dynamic-text {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        width: 100%;
+        height: 2.5rem; /* Match li height */
+      }
+      .dynamic-text-wrapper .dynamic-text li {
+        height: 2.5rem;
+        line-height: 2.5rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        transform: translateY(100%);
+        transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+      }
+
+      .dynamic-text-wrapper .dynamic-text li.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .dynamic-text-wrapper .dynamic-text li.hidden-up {
+        opacity: 0;
+        transform: translateY(-100%);
+      }
+      .dynamic-text-wrapper .dynamic-text li.hidden-down {
+        opacity: 0;
+        transform: translateY(100%);
+      }
+      .dynamic-text-wrapper .dynamic-text li.hidden-left {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      .dynamic-text-wrapper .dynamic-text li.hidden-right {
+        opacity: 0;
+        transform: translateX(100%);
+      }
     </style>
     <link rel="stylesheet" href="./assets/input.css" />
     <script type="module" src="./assets/js/icons.js"></script>
@@ -338,8 +386,29 @@
           <h1
             class="font-light text-5xl md:text-6xl lg:text-7xl leading-[1.12] tracking-tight transition-all duration-300 ease-in-out geist-font"
           >
-            Full Stack Software Developer.
+            Full Stack Software Engineer
           </h1>
+          <div
+            class="mt-4 text-2xl md:text-3xl font-semibold dynamic-text-wrapper text-center"
+          >
+            <ul class="dynamic-text">
+              <li>
+                ✨<span class="gradient-text"> 10x rockstar dev </span> ✨
+              </li>
+              <li>✨<span class="gradient-text"> mobile app dev </span> ✨</li>
+              <li>
+                ✨<span class="gradient-text">
+                  master of software engineering
+                </span>
+                ✨
+              </li>
+              <li>✨<span class="gradient-text"> web dev </span> ✨</li>
+              <li>
+                ✨<span class="gradient-text"> ml/ai researcher </span> ✨
+              </li>
+              <li>✨<span class="gradient-text"> frontend dev </span> ✨</li>
+            </ul>
+          </div>
         </header>
         <p
           class="mx-auto max-w-3xl text-lg md:text-xl leading-relaxed transition-all duration-300 ease-in-out"
@@ -396,9 +465,9 @@
           <div
             class="mb-1 font-light text-3xl md:text-4xl tracking-tight geist-font"
           >
-            30%
+            99%
           </div>
-          <div class="text-gray-400 text-sm">App Performance Boost</div>
+          <div class="text-gray-400 text-sm">Client Satisfaction</div>
         </div>
         <div
           class="hidden sm:block bg-gradient-to-b from-transparent via-white/20 to-transparent w-px h-12"
@@ -407,9 +476,9 @@
           <div
             class="mb-1 font-light text-3xl md:text-4xl tracking-tight geist-font"
           >
-            40%
+            100%
           </div>
-          <div class="text-gray-400 text-sm">Cloud Expense Reduction</div>
+          <div class="text-gray-400 text-sm">Delivery Rate in Record Time</div>
         </div>
       </div>
     </section>
@@ -604,9 +673,11 @@
             <div
               class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 p-4 border border-gray-400 dark:border-gray-600 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300"
             >
-              <div class="mb-2 w-9 h-9">
-                <svg-icon source="typescript"></svg-icon>
-              </div>
+              <img
+                src="./assets/icons/typescript.png"
+                alt="TypeScript"
+                class="w-9 h-9"
+              />
               <span>TypeScript</span>
             </div>
             <div
@@ -628,6 +699,11 @@
             <div
               class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 p-4 border border-gray-400 dark:border-gray-600 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300"
             >
+              <img
+                src="./assets/icons/flutter.png"
+                alt="Flutter"
+                class="w-9 h-9"
+              />
               <span>Flutter</span>
             </div>
           </div>
@@ -641,11 +717,17 @@
             <div
               class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 p-4 border border-gray-400 dark:border-gray-600 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300"
             >
+              <img src="./assets/icons/react.png" alt="React" class="w-9 h-9" />
               <span>React.js</span>
             </div>
             <div
               class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 p-4 border border-gray-400 dark:border-gray-600 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300"
             >
+              <img
+                src="./assets/icons/next.png"
+                alt="Next.js"
+                class="w-9 h-9"
+              />
               <span>Next.js</span>
             </div>
           </div>
@@ -667,6 +749,7 @@
             <div
               class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 p-4 border border-gray-400 dark:border-gray-600 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300"
             >
+              <img src="./assets/icons/flas.webp" alt="Flask" class="w-9 h-9" />
               <span>Flask</span>
             </div>
             <div
@@ -677,7 +760,7 @@
             <div
               class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 p-4 border border-gray-400 dark:border-gray-600 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300"
             >
-              <span>WebSockets</span>
+              <span>Web Sockets</span>
             </div>
           </div>
         </div>
@@ -690,16 +773,31 @@
             <div
               class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 p-4 border border-gray-400 dark:border-gray-600 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300"
             >
+              <img
+                src="./assets/icons/firebase.png"
+                alt="Firebase"
+                class="w-9 h-9"
+              />
               <span>Firebase</span>
             </div>
             <div
               class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 p-4 border border-gray-400 dark:border-gray-600 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300"
             >
+              <img
+                src="./assets/icons/supabase.png"
+                alt="Supabase"
+                class="w-9 h-9"
+              />
               <span>Supabase</span>
             </div>
             <div
               class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 p-4 border border-gray-400 dark:border-gray-600 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300"
             >
+              <img
+                src="./assets/icons/mongodb.png"
+                alt="MongoDB"
+                class="w-9 h-9"
+              />
               <span>MongoDB</span>
             </div>
             <div
@@ -713,22 +811,30 @@
             <div
               class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 p-4 border border-gray-400 dark:border-gray-600 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300"
             >
-              <span>AWS</span>
+              <img src="./assets/icons/aws.png" alt="AWS" class="w-9 h-9" />
+              <!-- <span>AWS</span> -->
             </div>
             <div
               class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 p-4 border border-gray-400 dark:border-gray-600 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300"
             >
+              <img src="./assets/icons/gcp.png" alt="GCP" class="w-9 h-9" />
               <span>GCP</span>
             </div>
             <div
               class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 p-4 border border-gray-400 dark:border-gray-600 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300"
             >
+              <img src="./assets/icons/sql.png" alt="SQL" class="w-9 h-9" />
               <span>SQL</span>
             </div>
             <div
               class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 p-4 border border-gray-400 dark:border-gray-600 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300"
             >
-              <span>Jupyter Notebooks</span>
+              <img
+                src="./assets/icons/colab.png"
+                alt="Google Colab"
+                class="w-9 h-9"
+              />
+              <span>Google Colab</span>
             </div>
           </div>
         </div>
@@ -741,6 +847,11 @@
             <div
               class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 p-4 border border-gray-400 dark:border-gray-600 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300"
             >
+              <img
+                src="./assets/icons/cursor.png"
+                alt="Cursor"
+                class="w-9 h-9"
+              />
               <span>Cursor</span>
             </div>
             <div
@@ -754,21 +865,37 @@
             <div
               class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 p-4 border border-gray-400 dark:border-gray-600 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300"
             >
+              <img
+                src="./assets/icons/trello.webp"
+                alt="Trello"
+                class="w-9 h-9"
+              />
               <span>Trello</span>
             </div>
             <div
               class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 p-4 border border-gray-400 dark:border-gray-600 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300"
             >
+              <img
+                src="./assets/icons/android.png"
+                alt="Android Studio"
+                class="w-9 h-9"
+              />
               <span>Android Studio</span>
             </div>
             <div
               class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 p-4 border border-gray-400 dark:border-gray-600 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300"
             >
+              <img src="./assets/icons/xcode.png" alt="Xcode" class="w-9 h-9" />
               <span>Xcode</span>
             </div>
             <div
               class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 p-4 border border-gray-400 dark:border-gray-600 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300"
             >
+              <img
+                src="./assets/icons/vscode.png"
+                alt="VSCode"
+                class="w-9 h-9"
+              />
               <span>VSCode</span>
             </div>
             <div
@@ -782,6 +909,11 @@
             <div
               class="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 p-4 border border-gray-400 dark:border-gray-600 rounded-lg w-22 h-22 transition-all hover:-translate-y-1.5 duration-300"
             >
+              <img
+                src="./assets/icons/clickup.webp"
+                alt="ClickUp"
+                class="w-9 h-9"
+              />
               <span>ClickUp</span>
             </div>
           </div>
@@ -805,7 +937,7 @@
         <!-- Card 1 -->
         <a
           class="relative bg-white/5 p-6 rounded-2xl overflow-hidden transition-all transition-duration-300 glass-card"
-          href="#"
+          href="https://github.com/victor-onoja/content_ai"
           data-animate
         >
           <h3 class="mb-2 font-medium text-lg geist-font">CoFounderAI</h3>
@@ -831,7 +963,7 @@
         <!-- Card 2 -->
         <a
           class="relative bg-white/5 p-6 rounded-2xl overflow-hidden transition-all transition-duration-300 glass-card"
-          href="#"
+          href="https://github.com/victor-onoja/CoFounderAI"
           data-animate
         >
           <h3 class="mb-2 font-medium text-lg geist-font">CocoAI</h3>
@@ -858,7 +990,7 @@
         <!-- Card 3 -->
         <a
           class="relative bg-white/5 p-6 rounded-2xl overflow-hidden transition-all transition-duration-300 glass-card"
-          href="#"
+          href="https://github.com/victor-onoja/degenChess"
           data-animate
         >
           <h3 class="mb-2 font-medium text-lg geist-font">
@@ -882,7 +1014,7 @@
         <!-- Card 4 -->
         <a
           class="relative bg-white/5 p-6 rounded-2xl overflow-hidden transition-all transition-duration-300 glass-card"
-          href="#"
+          href="https://victoronoja.hashnode.dev/"
           data-animate
         >
           <h3 class="mb-2 font-medium text-lg geist-font">ML/AI Blog</h3>
@@ -1149,6 +1281,63 @@
         init();
         step();
       })();
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const dynamicList = document.querySelector(".dynamic-text");
+        if (!dynamicList) return;
+
+        const items = Array.from(dynamicList.children);
+        let currentIndex = 0;
+        const animationDelay = 4000; // 4 seconds between transitions
+
+        const directions = ["up", "down", "left", "right"];
+
+        function animateText() {
+          const currentItem = items[currentIndex];
+          const nextIndex = (currentIndex + 1) % items.length;
+          const nextItem = items[nextIndex];
+
+          // Pick random exit and entry directions
+          const exitDir = `hidden-${
+            directions[Math.floor(Math.random() * directions.length)]
+          }`;
+          let entryDir = `hidden-${
+            directions[Math.floor(Math.random() * directions.length)]
+          }`;
+          // Ensure entry and exit are not opposites for a better visual
+          if (
+            (exitDir.includes("up") && entryDir.includes("down")) ||
+            (exitDir.includes("down") && entryDir.includes("up")) ||
+            (exitDir.includes("left") && entryDir.includes("right")) ||
+            (exitDir.includes("right") && entryDir.includes("left"))
+          ) {
+            entryDir = `hidden-${
+              directions[Math.floor(Math.random() * directions.length)]
+            }`;
+          }
+
+          // Prepare next item for entry
+          nextItem.className = entryDir;
+
+          // Animate current item out
+          currentItem.className = exitDir;
+
+          // Animate next item in after a short delay
+          setTimeout(() => {
+            nextItem.className = "visible";
+          }, 50); // a small delay to ensure the browser applies the initial hidden state
+
+          currentIndex = nextIndex;
+        }
+
+        // Initial setup
+        if (items.length > 0) {
+          items.forEach((item) => (item.className = "hidden-down"));
+          items[0].className = "visible";
+          setInterval(animateText, animationDelay);
+        }
+      });
     </script>
   </body>
 </html>

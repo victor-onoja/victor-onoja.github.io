@@ -7,7 +7,6 @@ import github from "../icons/github.svg?raw";
 import briefcase from "../icons/briefcase.svg?raw";
 import envelope from "../icons/envelope.svg?raw";
 import css from "../icons/css-3.svg?raw";
-import cython from "../icons/cython.svg?raw";
 import discord from "../icons/discord.svg?raw";
 import docker from "../icons/Docker.svg?raw";
 import fastapi from "../icons/Fastapi.svg?raw";
@@ -19,16 +18,12 @@ import jinja from "../icons/jinja-logo.svg?raw";
 import linkedin from "../icons/LinkedIn.svg?raw";
 import nodejs from "../icons/Node.js.svg?raw";
 import postgres from "../icons/PostgresSQL.svg?raw";
-import rust from "../icons/rust.svg?raw";
-import solidity from "../icons/solidity-main.svg?raw";
 import sqlAlchemy from "../icons/SQLAlchemy.svg?raw";
 import sqlite from "../icons/SQLite.svg?raw";
 import tailwind from "../icons/tailwindcss.svg?raw";
 import vite_icon from "../icons/Vite-icon.svg?raw";
 import x_icon from "../icons/x.svg?raw";
 import x_mark from "../icons/x-bold.svg?raw";
-import dart from "../icons/dart.svg?raw";
-import typescript from "../icons/typescript.svg?raw";
 
 const icons = {
   python: python,
@@ -40,7 +35,6 @@ const icons = {
   briefcase: briefcase,
   envelope: envelope,
   css: css,
-  cython: cython,
   discord: discord,
   docker: docker,
   fastapi: fastapi,
@@ -52,16 +46,12 @@ const icons = {
   linkedin: linkedin,
   nodejs: nodejs,
   postgres: postgres,
-  rust: rust,
-  solidity: solidity,
   sqlAlchemy: sqlAlchemy,
   sqlite: sqlite,
   tailwind: tailwind,
   vite_icon: vite_icon,
   x: x_icon,
   close: x_mark,
-  dart: dart,
-  typescript: typescript,
 };
 
 class SVGIcon extends HTMLElement {
