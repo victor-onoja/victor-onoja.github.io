@@ -23,6 +23,7 @@ function getHtmlEntries(dir) {
 }
 
 export default defineConfig({
+  base: "/",
   root: ".",
   build: {
     outDir: "./dist",
