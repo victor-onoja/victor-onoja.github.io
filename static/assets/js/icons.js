@@ -9,7 +9,7 @@ import envelope from "../icons/envelope.svg?raw";
 import css from "../icons/css-3.svg?raw";
 import discord from "../icons/discord.svg?raw";
 import docker from "../icons/Docker.svg?raw";
-import fastapi from "../icons/Fastapi.svg?raw";
+import fastapi from "../icons/FastAPI.svg?raw";
 import figma from "../icons/figma.svg?raw";
 import git from "../icons/Git.svg?raw";
 import html5 from "../icons/html5.svg?raw";
