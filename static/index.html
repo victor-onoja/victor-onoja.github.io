@@ -225,6 +225,12 @@
         opacity: 0;
         transform: translateX(100%);
       }
+
+      @media (max-width: 767px) {
+        .desktop-only {
+          display: none;
+        }
+      }
     </style>
     <link rel="stylesheet" href="./assets/input.css" />
     <script type="module" src="./assets/js/icons.js"></script>
@@ -396,7 +402,7 @@
                 ✨<span class="gradient-text"> 10x rockstar dev </span> ✨
               </li>
               <li>✨<span class="gradient-text"> mobile app dev </span> ✨</li>
-              <li>
+              <li class="desktop-only">
                 ✨<span class="gradient-text">
                   master of software engineering
                 </span>
@@ -406,7 +412,9 @@
               <li>
                 ✨<span class="gradient-text"> ml/ai researcher </span> ✨
               </li>
-              <li>✨<span class="gradient-text"> frontend dev </span> ✨</li>
+              <li class="desktop-only">
+                ✨<span class="gradient-text"> frontend dev </span> ✨
+              </li>
             </ul>
           </div>
         </header>
@@ -1287,7 +1295,13 @@
         const dynamicList = document.querySelector(".dynamic-text");
         if (!dynamicList) return;
 
-        const items = Array.from(dynamicList.children);
+        const allItems = Array.from(dynamicList.children);
+        const items = allItems.filter(
+          (item) => window.getComputedStyle(item).display !== "none"
+        );
+
+        if (items.length <= 1) return; // No need to animate if there's 0 or 1 item
+
         let currentIndex = 0;
         const animationDelay = 4000; // 4 seconds between transitions
 
