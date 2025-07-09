@@ -41,4 +41,7 @@ export default defineConfig({
     },
   },
   plugins: [tailwindcss()],
+  server: {
+    allowedHosts: ["bb29a53d6e40.ngrok-free.app"],
+  },
 });
