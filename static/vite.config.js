@@ -29,14 +29,14 @@ function copyStaticAssets() {
     writeBundle() {
       const assetsSource = resolve(__dirname, 'assets');
       const assetsDest = resolve(__dirname, 'dist/assets');
-      
+
       // Ensure destination directory exists
       if (!existsSync(assetsDest)) {
         mkdirSync(assetsDest, { recursive: true });
       }
-      
+
       // Copy PDF and other non-bundled assets
-      const staticFiles = ['Odoh_Victor_FullStack_Resume_2025.pdf'];
+      const staticFiles = ['Odoh_Victor_FullStack_Resume_2026.pdf'];
       staticFiles.forEach(file => {
         const src = join(assetsSource, file);
         const dest = join(assetsDest, file);
